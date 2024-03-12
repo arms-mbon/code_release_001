@@ -27,7 +27,8 @@
             "MBON",
             "https://www.marinespecies.org/",
             "software",
-            "python"
+            "python",
+            "R"
         ]
     },
     "_:MatthiasObst":{
@@ -46,6 +47,7 @@
         "@type":"Person",
         "name":"Nauras Daraghmeh",
         "email": "naurasd@googlemail.com",
+        "identifier":"https://orcid.org/0000-0001-8261-824X"
     },
     "_:ARMSProject":{
         "@type":"Project",
