@@ -1,12 +1,16 @@
 # code_release_001
 
-Here you will find all code that was used for the analysis presented in ARMs-MBON's first data paper. Note that this is not the code used to create files for EurOBIS submissions.
+Here you will find all code that was used for the analysis presented in ARMs-MBON's first data paper. Note that this is not the code used to create files for EurOBIS submissions, but the code used for the exploration of the sequencing data of data_release_001.
+
+The following R scripts merge the data from individual PEMA runs we provide on GitHub for each marker gene: 
 
 * [COI_merge_tables_first_step_for_data_paper.R](https://github.com/arms-mbon/code_release_001/blob/main/COI_merge_tables_first_step_for_data_paper.R) takes
 * [18S_merge_tables_first_step_for_data_paper.R](https://github.com/arms-mbon/code_release_001/blob/main/18S_merge_tables_first_step_for_data_paper.R) takes
 * [ITS_merge_tables_first_step_for_data_paper.R](https://github.com/arms-mbon/code_release_001/blob/main/ITS_merge_tables_first_step_for_data_paper.R) takes 
 
-
+These scripts perform the following tasks:
+* For COI:
+** As no confidence threshold was applied within PEMA for taxonomic assignments of COI ASVs, all rank assignments with a confidence value of below 0.8 are discarded for this marker gene. 
 
 to analyse the species information coming from the analysis of the ARMS-MBON sequences
 
