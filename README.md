@@ -10,7 +10,7 @@ The following R scripts merge the data from individual PEMA runs we provide on G
 
 These scripts perform the following tasks:
 * For COI:
-** As no confidence threshold was applied within PEMA for taxonomic assignments of COI ASVs, all rank assignments with a confidence value of below 0.8 are discarded for this marker gene. 
+  * As no confidence threshold was applied within PEMA for taxonomic assignments of COI ASVs, all rank assignments with a confidence value of below 0.8 are discarded for this marker gene. 
 
 to analyse the species information coming from the analysis of the ARMS-MBON sequences
 
