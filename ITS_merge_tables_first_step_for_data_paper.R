@@ -6,7 +6,7 @@ library(plyr)
 library(readxl)
 library(stringr)
 
-setwd("C:/Users/Nauras/OneDrive - University of Gothenburg/ARMS MBON/data paper/ARMS_data_paper_Nauras/Analysis/Nauras/ITS")
+setwd("~/ITS")
 
 # read Extended_final_tables of each sequencing run
 
