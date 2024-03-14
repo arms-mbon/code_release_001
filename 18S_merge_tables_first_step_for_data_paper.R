@@ -7,7 +7,7 @@ library(readxl)
 library(stringr)
 library(openxlsx)    
 
-setwd("C:/Users/Nauras/OneDrive - University of Gothenburg/ARMS MBON/data paper/ARMS_data_paper_Nauras/Analysis/Nauras/18S")
+setwd("~/18S")
 
 # read Extended_final_tables of each sequencing run
 # One Gdynia sample was processed separately and therefore has its own table
