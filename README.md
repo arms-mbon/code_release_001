@@ -2,9 +2,9 @@
 
 Here you will find all code that was used for the analysis presented in ARMs-MBON's first data paper. Note that this is not the code used to create files for EurOBIS submissions.
 
-* [COI_merge_tables_first_step_for_data_paper.R](https://github.com/arms-mbon/code_release_001/blob/main/WormsAttributes4ARMSdata.py) takes
-* [18S_merge_tables_first_step_for_data_paper.R](https://github.com/arms-mbon/code_release_001/blob/main/WormsAttributes4ARMSdata.py) takes
-* [ITS_merge_tables_first_step_for_data_paper.R](https://github.com/arms-mbon/code_release_001/blob/main/WormsAttributes4ARMSdata.py) takes 
+* [COI_merge_tables_first_step_for_data_paper.R](https://github.com/arms-mbon/code_release_001/blob/main/COI_merge_tables_first_step_for_data_paper.R) takes
+* [18S_merge_tables_first_step_for_data_paper.R](https://github.com/arms-mbon/code_release_001/blob/main/18S_merge_tables_first_step_for_data_paper.R) takes
+* [ITS_merge_tables_first_step_for_data_paper.R](https://github.com/arms-mbon/code_release_001/blob/main/ITS_merge_tables_first_step_for_data_paper.R) takes 
 
 
 
