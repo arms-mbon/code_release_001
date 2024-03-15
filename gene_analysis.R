@@ -12,8 +12,6 @@ library(readxl)
 library(writexl)
 library(UpSetR)
 
-setwd("C:/Users/Nauras/OneDrive - University of Gothenburg/ARMS MBON/data paper/ARMS_data_paper_Nauras/Analysis/Nauras")
-
 ### Create phyloseq objects, do first quick data assessments and get info on recovered phyla species-level assignments ###
 
 ## COI ##
