@@ -1,0 +1,72 @@
+{
+    "./":{
+        "license": "https://creativecommons.org/public-domain/cc0/",
+        "title": "code_release_001",
+        "wasAssociatedWith":[
+            {"@id":"_:MatthiasObst"},
+            {"@id":"_:KatrinaExter"},
+            {"@id":"_:NaurasDaraghmeh"}
+        ],
+        "creator":[
+            {"@id":"_:KatrinaExter"},
+            {"@id":"_:NaurasDaraghmeh"},
+            {"@id":"_:ARMSProject"},
+            {"@id":"_:AssemblePlus"}
+        ],
+        "publisher":{"@id": "_:VLIZ"},
+        "ContactPoint":[
+            "opsci@vliz.be",
+            "matthias.obst@marine.gu.se"
+        ],
+        "description":"The code that was used in the analysis of the ARMS-MBON species results for the first data release.",
+        "dct:relation":["https://github.com/arms-mbon/analysis_release_001","https://github.com/arms-mbon/data_release_001"],
+        "@type":"SoftwareSourceCode",
+        "programmingLanguage":"python",
+        "keywords":[
+            "ARMS",
+            "MBON",
+            "https://www.marinespecies.org/",
+            "software",
+            "python",
+            "R"
+        ]
+    },
+    "_:MatthiasObst":{
+        "@type":"Person",
+        "name":"Matthias Obst",
+        "email": "matthias.obst@marine.gu.se",
+        "identifier":"https://orcid.org/0000-0003-0264-9631"
+    },
+    "_:KatrinaExter":{
+        "@type":"Person",
+        "name":"Katrina Exter",
+        "email": "katrina.exter@vliz.be",
+        "identifier":"https://orcid.org/0000-0002-5911-1536"
+    },
+    "_:NaurasDaraghmeh":{
+        "@type":"Person",
+        "name":"Nauras Daraghmeh",
+        "email": "naurasd@googlemail.com",
+        "identifier":"https://orcid.org/0000-0001-8261-824X"
+    },
+    "_:ARMSProject":{
+        "@type":"Project",
+        "name":"ARMS-MBON",
+        "identifier":"https://arms-mbon.eu"
+    },
+    "_:AssemblePlus":{
+        "@type":"Project",
+        "name":"ASSEMBLE Plus",
+        "identifier":"https://cordis.europa.eu/project/id/730984"
+    },
+    "_:VLIZ":{
+        "@type":"Organization",
+        "name":"Flanders Marine Institute",
+        "url":"https://www.vliz.be/en"
+    },
+    "./WormsAttributes4ARMSdata.py":{
+        "description":"Code to extract certain attributes from WoRMS for a list of AphiaIDs",
+        "downloadURL":"https://data.arms-mbon.org/code_release_001/latest/#./WormsAttributes4ARMSdata.py/",
+        "creator":{"@id":"_:KatrinaExter"}
+    }
+}
