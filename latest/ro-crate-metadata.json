@@ -136,6 +136,79 @@
                     "@id": "./ITS_merge_tables_first_step_for_data_paper.R"
                 },
                 {
+                    "@id": "./gene_analysis.R"
+                },
+                {
+                    "@id": "./COI_merge_tables_first_step_for_data_paper.R"
+                }
+            ],
+            "license": "https://creativecommons.org/public-domain/cc0/",
+            "title": "code_release_001",
+            "wasAssociatedWith": [
+                {
+                    "@id": "_:MatthiasObst"
+                },
+                {
+                    "@id": "_:KatrinaExter"
+                },
+                {
+                    "@id": "_:NaurasDaraghmeh"
+                }
+            ],
+            "creator": [
+                {
+                    "@id": "_:KatrinaExter"
+                },
+                {
+                    "@id": "_:NaurasDaraghmeh"
+                },
+                {
+                    "@id": "_:ARMSProject"
+                },
+                {
+                    "@id": "_:AssemblePlus"
+                }
+            ],
+            "publisher": {
+                "@id": "_:VLIZ"
+            },
+            "ContactPoint": [
+                "opsci@vliz.be",
+                "matthias.obst@marine.gu.se"
+            ],
+            "description": "The code that was used in the analysis of the ARMS-MBON species results for the first data release.",
+            "dct:relation": [
+                "https://github.com/arms-mbon/analysis_release_001",
+                "https://github.com/arms-mbon/data_release_001"
+            ],
+            "programmingLanguage": "python",
+            "keywords": [
+                "ARMS",
+                "MBON",
+                "https://www.marinespecies.org/",
+                "software",
+                "python",
+                "R"
+            ]
+        },
+        {
+            "@id": "./",
+            "@type": "SoftwareSourceCode",
+            "label": "./",
+            "hasPart": [
+                {
+                    "@id": "./final_count_taxonomy_fasta_files/"
+                },
+                {
+                    "@id": "./WormsAttributes4ARMSdata.py"
+                },
+                {
+                    "@id": "./18S_merge_tables_first_step_for_data_paper.R"
+                },
+                {
+                    "@id": "./ITS_merge_tables_first_step_for_data_paper.R"
+                },
+                {
                     "@id": "./COI_merge_tables_first_step_for_data_paper.R"
                 }
             ],
