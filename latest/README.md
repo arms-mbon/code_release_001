@@ -15,9 +15,21 @@ These scripts perform the following tasks:
 * Given that reference databases use different taxonomic levels and contain assignments that may not represent an actual classification (e.g., "Class.xy_X" etc.), rank assignments were curated (i.e., assignments containing Xs,"_sp", etc. set as NA), actual species assignments generated and a final rank order established.
 * Final ASV/OTU count tables, taxonomy tables and fasta files were generated for each gene's data set. These files can be found [here](https://github.com/arms-mbon/code_release_001/tree/main/final_count_taxonomy_fasta_files).
 
-The R script [gene_analysis.R](below performs all subsequent exploration of the sequencing data, including: 
-* 
+The R script [gene_analysis.R](https://github.com/arms-mbon/code_release_001/blob/main/gene_analysis.R) performs all subsequent exploration of the sequencing data presented in the manuscript, including: 
+* removal of certain samples/replicates and erroneous/contaminant sequences
+* manual correction of phylum level assignments
+* generating all data/results presented in the mansucript
+* generating species occurrences (i.e., species occurrences with at least two sequence reads of COI and 18S data; data of each gene were then pooled) to screen for sensitive, non-indigenous and red-listed taxa (see below for respective code of the actual screening process)
+* statistics
+* generating plots 
 
+## Processing 
 
-To analyse the species information coming from the analysis of the ARMS-MBON sequences:
+The species occurrences generated with the R script mentioned above were scanned against the following databases: 
+* AZTI’s Marine Biotic Index (AMBI; Borja et al. 2000, 2019) for species very sensitive to disturbance
+* the World Register of Introduced Marine Species (WRiMS; Costello et al. 2021, 2024) for species with alien status at the place of observation
+* the Red Lists of the International Union for Conservation of Nature (IUCN) and Baltic Marine Environment Protection Commission (Helsinki Commission, HELCOM) for species registered as Near Threatened, Vulnerable, Endangered or Critically Endangered
+
+To this end, we used the web services provided by the World Register of Marine Species (WoRMS, Ahyong et al. 2023). The AMBI and IUCN/HELCOM information were obtained using the WoRMS REST services (https://www.marinespecies.org/rest/; more specifically the call AphiaAttributesByAphiaID), while the WRIMS checks can be replicated using the Jupyter notebook on https://www.github.com/vliz-be-opsci/lw-iji-invasive-checker.:
+
 * [WormsAttributes4ARMSdata.py](https://github.com/arms-mbon/code_release_001/blob/main/WormsAttributes4ARMSdata.py) takes as input a CSV file with at least one colunm of [AphiaIDs](https://www.marinespecies.org/about.php#what_is_aphia) for the species' of interest, and it returns the information about a set of attributes ("Species importance to society", "IUCN RedList Category","IUCN Criteria","IUCN Year Accessed","HELCOM RedList Category","AMBI ecological group","Environmental position") for those species as found in WoRMS, using its [REST APIs](https://www.marinespecies.org/rest/). Useage of the code is documented within the code. You run this on the command line, with the input file name and column number with the AphiaIDs written into the top of the code.   
