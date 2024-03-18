@@ -13,7 +13,7 @@ The following R scripts merge the data (read count, taxonomy, and fasta files) f
 These scripts perform the following tasks:
 * As no confidence threshold was applied within PEMA for taxonomic assignments of COI ASVs, all rank assignments with a confidence value of below 0.8 are discarded for this marker gene.
 * Given that reference databases use different taxonomic levels and contain assignments that may not represent an actual classification (e.g., "Class.xy_X" etc.), rank assignments were curated (i.e., assignments containing Xs,"_sp", etc. set as NA), actual species assignments generated and a final rank order established.
-* Final ASV/OTU count tables, taxonomy tables and fasta files were generated for each gene's data set. These files can be found [here](https://github.com/arms-mbon/code_release_001/tree/main/final_count_taxonomy_fasta_files).
+* Final ASV/OTU count tables, taxonomy tables and fasta files were generated for each gene's data set. These files can be found in [final_count_taxonomy_fasta_files](https://github.com/arms-mbon/code_release_001/tree/main/final_count_taxonomy_fasta_files).
 
 The R script [gene_analysis.R](https://github.com/arms-mbon/code_release_001/blob/main/gene_analysis.R) performs all subsequent exploration of the sequencing data as presented in the manuscript, including: 
 * removal of certain samples/replicates and erroneous/contaminant sequences
