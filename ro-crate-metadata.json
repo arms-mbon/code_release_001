@@ -57,6 +57,12 @@
                     "@id": "./WormsAttributes4ARMSdata.py"
                 },
                 {
+                    "@id": "./SpeciesListAttributes18S.csv"
+                },
+                {
+                    "@id": "./SpeciesListAttributesCOI.csv"
+                },
+                {
                     "@id": "./18S_merge_tables_first_step_for_data_paper.R"
                 },
                 {
@@ -223,6 +229,16 @@
             "creator": {
                 "@id": "_:KatrinaExter"
             }
+        },
+        {
+            "@id": "./SpeciesListAttributes18S.csv",
+            "@type": "File",
+            "label": "./SpeciesListAttributes18S.csv"
+        },
+        {
+            "@id": "./SpeciesListAttributesCOI.csv",
+            "@type": "File",
+            "label": "./SpeciesListAttributesCOI.csv"
         },
         {
             "@id": "./18S_merge_tables_first_step_for_data_paper.R",
