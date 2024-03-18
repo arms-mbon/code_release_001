@@ -69,6 +69,9 @@
                     "@id": "./ARMS_species_WRiMS_check.xlsx"
                 },
                 {
+                    "@id": "./ARMS_SpeciesPerObservatory_wrims.xlsx"
+                },
+                {
                     "@id": "./COI_merge_tables_first_step_for_data_paper.R"
                 }
             ],
@@ -120,6 +123,51 @@
                 "python",
                 "R"
             ]
+        },
+        {
+            "@id": "_:MatthiasObst",
+            "@type": "Person",
+            "name": "Matthias Obst",
+            "email": "matthias.obst@marine.gu.se",
+            "identifier": "https://orcid.org/0000-0003-0264-9631",
+            "label": "_:MatthiasObst"
+        },
+        {
+            "@id": "_:KatrinaExter",
+            "@type": "Person",
+            "name": "Katrina Exter",
+            "email": "katrina.exter@vliz.be",
+            "identifier": "https://orcid.org/0000-0002-5911-1536",
+            "label": "_:KatrinaExter"
+        },
+        {
+            "@id": "_:NaurasDaraghmeh",
+            "@type": "Person",
+            "name": "Nauras Daraghmeh",
+            "email": "naurasd@googlemail.com",
+            "identifier": "https://orcid.org/0000-0001-8261-824X",
+            "label": "_:NaurasDaraghmeh"
+        },
+        {
+            "@id": "_:ARMSProject",
+            "@type": "Project",
+            "name": "ARMS-MBON",
+            "identifier": "https://arms-mbon.eu",
+            "label": "_:ARMSProject"
+        },
+        {
+            "@id": "_:AssemblePlus",
+            "@type": "Project",
+            "name": "ASSEMBLE Plus",
+            "identifier": "https://cordis.europa.eu/project/id/730984",
+            "label": "_:AssemblePlus"
+        },
+        {
+            "@id": "_:VLIZ",
+            "@type": "Organization",
+            "name": "Flanders Marine Institute",
+            "url": "https://www.vliz.be/en",
+            "label": "_:VLIZ"
         },
         {
             "@id": "./final_count_taxonomy_fasta_files/ITS_ASV_table.txt",
@@ -197,48 +245,14 @@
             "label": "./ARMS_species_WRiMS_check.xlsx"
         },
         {
+            "@id": "./ARMS_SpeciesPerObservatory_wrims.xlsx",
+            "@type": "File",
+            "label": "./ARMS_SpeciesPerObservatory_wrims.xlsx"
+        },
+        {
             "@id": "./COI_merge_tables_first_step_for_data_paper.R",
             "@type": "File",
             "label": "./COI_merge_tables_first_step_for_data_paper.R"
-        },
-        {
-            "@id": "_:MatthiasObst",
-            "@type": "Person",
-            "name": "Matthias Obst",
-            "email": "matthias.obst@marine.gu.se",
-            "identifier": "https://orcid.org/0000-0003-0264-9631"
-        },
-        {
-            "@id": "_:KatrinaExter",
-            "@type": "Person",
-            "name": "Katrina Exter",
-            "email": "katrina.exter@vliz.be",
-            "identifier": "https://orcid.org/0000-0002-5911-1536"
-        },
-        {
-            "@id": "_:NaurasDaraghmeh",
-            "@type": "Person",
-            "name": "Nauras Daraghmeh",
-            "email": "naurasd@googlemail.com",
-            "identifier": "https://orcid.org/0000-0001-8261-824X"
-        },
-        {
-            "@id": "_:ARMSProject",
-            "@type": "Project",
-            "name": "ARMS-MBON",
-            "identifier": "https://arms-mbon.eu"
-        },
-        {
-            "@id": "_:AssemblePlus",
-            "@type": "Project",
-            "name": "ASSEMBLE Plus",
-            "identifier": "https://cordis.europa.eu/project/id/730984"
-        },
-        {
-            "@id": "_:VLIZ",
-            "@type": "Organization",
-            "name": "Flanders Marine Institute",
-            "url": "https://www.vliz.be/en"
         }
     ]
 }
