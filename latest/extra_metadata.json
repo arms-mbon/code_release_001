@@ -20,7 +20,6 @@
         ],
         "description":"The code that was used in the analysis of the ARMS-MBON species results for the first data release.",
         "dct:relation":["https://github.com/arms-mbon/analysis_release_001","https://github.com/arms-mbon/data_release_001"],
-        "@type":"SoftwareSourceCode",
         "programmingLanguage":"python",
         "keywords":[
             "ARMS",
