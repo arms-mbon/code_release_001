@@ -11,6 +11,7 @@ The following R scripts merge the data (read count, taxonomy, and fasta files) f
 * [ITS_merge_tables_first_step_for_data_paper.R](https://github.com/arms-mbon/code_release_001/blob/main/ITS_merge_tables_first_step_for_data_paper.R) 
 
 These scripts perform the following tasks:
+* Merging of all data from individual PEMA runs.
 * As no confidence threshold was applied within PEMA for taxonomic assignments of COI ASVs, all rank assignments with a confidence value of below 0.8 are discarded for this marker gene.
 * Given that reference databases use different taxonomic levels and contain assignments that may not represent an actual classification (e.g., "Class.xy_X" etc.), rank assignments were curated (i.e., assignments containing Xs,"_sp", etc. set as NA), actual species assignments generated and a final rank order established.
 * Final ASV/OTU count tables, taxonomy tables and fasta files were generated for each gene's data set. These files can be found in [final_count_taxonomy_fasta_files](https://github.com/arms-mbon/code_release_001/tree/main/final_count_taxonomy_fasta_files).
@@ -23,11 +24,11 @@ The R script [gene_analysis.R](https://github.com/arms-mbon/code_release_001/blo
 * statistics
 * generating plots 
 
-## Processing 
+## Screening for species listed in AMBI, IUCN/HELCOM Red Lists and WRiMS
 
 The species occurrences generated with the R script mentioned above were scanned for the following information: 
-* AZTI’s Marine Biotic Index (AMBI; Borja et al. 2000, 2019) for species very sensitive to disturbance
-* the World Register of Introduced Marine Species (WRiMS; Costello et al. 2021, 2024) for species with alien status at the place of observation
+* AZTI’s Marine Biotic Index (AMBI; Borja et al., 2000, 2019) for species very sensitive to disturbance
+* the World Register of Introduced Marine Species (WRiMS; Costello et al., 2021, 2024) for species with alien status at the place of observation
 * the Red Lists of the International Union for Conservation of Nature (IUCN) and Baltic Marine Environment Protection Commission (Helsinki Commission, HELCOM) for species registered as Near Threatened, Vulnerable, Endangered or Critically Endangered
 
 To this end, we used the web services provided by the World Register of Marine Species (WoRMS, Ahyong et al. 2023), using the [WoRMS REST services](https://www.marinespecies.org/rest/); more specifically the call AphiaAttributesByAphiaID):
