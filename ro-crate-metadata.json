@@ -72,9 +72,6 @@
                     "@id": "./gene_analysis.R"
                 },
                 {
-                    "@id": "./ARMS_species_WRiMS_check.xlsx"
-                },
-                {
                     "@id": "./ARMS_SpeciesPerObservatory_wrims.xlsx"
                 },
                 {
@@ -254,11 +251,6 @@
             "@id": "./gene_analysis.R",
             "@type": "File",
             "label": "./gene_analysis.R"
-        },
-        {
-            "@id": "./ARMS_species_WRiMS_check.xlsx",
-            "@type": "File",
-            "label": "./ARMS_species_WRiMS_check.xlsx"
         },
         {
             "@id": "./ARMS_SpeciesPerObservatory_wrims.xlsx",
