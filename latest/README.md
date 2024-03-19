@@ -22,7 +22,9 @@ The R script [gene_analysis.R](https://github.com/arms-mbon/code_release_001/blo
 * generating all data/results presented in the mansucript
 * generating species occurrences (i.e., species occurrences with at least two sequence reads of COI and 18S data; data of each gene were then pooled) to screen for sensitive, non-indigenous and red-listed taxa (see below for respective code of the actual screening process)
 * statistics
-* generating plots 
+* generating plots
+
+Further information on each step are given as comments within the R script.
 
 ## Screening for species listed in AMBI, IUCN/HELCOM Red Lists and WRiMS
 
@@ -36,6 +38,9 @@ The three databases used to screen against are:
 
 For AMBI and IUCN/HELCOM scan, we used the web services provided by the World Register of Marine Species (WoRMS, Ahyong et al. 2023), using the [WoRMS REST services](https://www.marinespecies.org/rest/); more specifically the call AphiaAttributesByAphiaID) via the following script:
 * [WormsAttributes4ARMSdata.py](https://github.com/arms-mbon/code_release_001/blob/main/WormsAttributes4ARMSdata.py) takes as input a CSV file with at least one column of [AphiaIDs](https://www.marinespecies.org/about.php#what_is_aphia) for the species' of interest, and it returns the information about a set of attributes ("Species importance to society", "IUCN RedList Category","IUCN Criteria","IUCN Year Accessed","HELCOM RedList Category","AMBI ecological group","Environmental position") for those species as found in WoRMS, using its [REST APIs](https://www.marinespecies.org/rest/). Useage of the code is documented within the code. You run this on the command line, with the input file name and column number with the AphiaIDs written into the top of the code.
+* The resulting files are [SpeciesListAttributesCOI.csv](https://github.com/arms-mbon/code_release_001/blob/main/SpeciesListAttributesCOI.csv) and [SpeciesListAttributes18S.csv](https://github.com/arms-mbon/code_release_001/blob/main/SpeciesListAttributes18S.csv).
 
-For WRiMS scan, we used the Jupyter notebook on [IJI invasive checker GH](https://www.github.com/vliz-be-opsci/lw-iji-invasive-checker), with the specific input files in [ARMSrun2 folder](https://github.com/vliz-be-opsci/lw-iji-invasive-checker/tree/main/notebooks/ARMSrun2) there. 
+For WRiMS scan, we used the Jupyter notebook on [IJI invasive checker GH](https://www.github.com/vliz-be-opsci/lw-iji-invasive-checker), with the specific input files in [ARMSrun2 folder](https://github.com/vliz-be-opsci/lw-iji-invasive-checker/tree/main/notebooks/ARMSrun2) there. The resulting file is [ARMS_SpeciesPerObservatory_wrims.xlsx](https://github.com/arms-mbon/code_release_001/blob/main/ARMS_SpeciesPerObservatory_wrims.xlsx).
+
+The files resulting from the database scan are read into R within the [gene_analysis.R](https://github.com/arms-mbon/code_release_001/blob/main/gene_analysis.R) script and processed further for analysis and visualisation.
 
