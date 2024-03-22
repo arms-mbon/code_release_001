@@ -18,7 +18,7 @@
       "opsci@vliz.be",
       "matthias.obst@marine.gu.se"
     ],
-    "description": "The code and selected outputs that were used/generated in the analysis of the ARMS-MBON species results for the first data release.",
+    "description": "All the code and selected outputs that were used/generated in the analysis of the ARMS-MBON species results for the first data release.",
     "dct:relation": [ "https://github.com/arms-mbon/analysis_release_001", "https://github.com/arms-mbon/data_release_001" ],
     "keywords": [
       "ARMS",
@@ -69,6 +69,38 @@
     "@type": "SoftwareSourceCode",
     "programmingLanguage": "python"
   },
+  "./SpeciesListAttributes18S.csv": {
+    "description": "Output from WormsAttributes4ARMSdata_4release001.py for 18S",
+    "downloadURL": "https://data.arms-mbon.org/code_release_001/latest/#./SpeciesListAttributes18S.csv",
+    "creator": { "@id": "_:KatrinaExter" },
+    "wasDerivedFrom": "https://github.com/arms-mbon/code_release_001/blob/main/WormsAttributes4ARMSdata_4release001.py",
+    "fileFormat": "csv",
+    "@type": "File"
+  },
+  "./SpeciesListAttributesCOI.csv": {
+    "description": "Output from WormsAttributes4ARMSdata_4release001.py for COI",
+    "downloadURL": "https://data.arms-mbon.org/code_release_001/latest/#./SpeciesListAttributesCOI.csv",
+    "creator": { "@id": "_:KatrinaExter" },
+    "wasDerivedFrom": "https://github.com/arms-mbon/code_release_001/blob/main/WormsAttributes4ARMSdata_4release001.py",
+    "fileFormat": "csv",
+    "@type": "File"
+  },
+  "./sample_data.txt": {
+    "description": "Input file for the gene analysis",
+    "downloadURL": "https://data.arms-mbon.org/code_release_001/latest/#./sample_data.txt",
+    "creator": { "@id": "_:NaurasDaraghmeh" },
+    "fileFormat": "Text",
+    "dct:relation": "https://github.com/arms-mbon/code_release_001/blob/main/gene_analysis.R",
+    "@type": "File"
+  },
+  "./ARMS_SpeciesPerObservatory_wrims.xlsx": {
+    "description": "Output of the so-called IJI WRIMS checker: checking for non-native/invasive status of species using the WoRMS APIs",
+    "downloadURL": "https://data.arms-mbon.org/code_release_001/latest/#./ARMS_SpeciesPerObservatory_wrims.xlsx",
+    "creator": { "@id": "_:NaurasDaraghmeh" },
+    "fileFormat": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+    "wasDerivedFrom": "https://github.com/vliz-be-opsci/lw-iji-invasive-checker",
+    "@type": "File"
+  },
   "./WormsAttributes4ARMSdata_4release001.py": {
     "description": "Code to extract certain attributes from WoRMS for a list of AphiaIDs, fine-tuned for use with these particular data",
     "downloadURL": "https://data.arms-mbon.org/code_release_001/latest/#./WormsAttributes4ARMSdata_4release001.py",
@@ -79,7 +111,8 @@
   "./final_count_taxonomy_fasta_files/": {
     "description": "The output of the R scripts to merge the relevant data from the individual PEMA runs. Final ASV/OTU count tables, taxonomy tables, and fasta files for each marker gene ",
     "downloadURL": "https://data.arms-mbon.org/code_release_001/latest/#./final_count_taxonomy_fasta_files/",
-    "creator": { "id": "_:NaurasDaraghmeh" }
+    "creator": { "id": "_:NaurasDaraghmeh" },
+    "dct:relation": "https://github.com/arms-mbon/code_release_001/blob/main/gene_analysis.R"
   },
   "./18S_merge_tables_first_step_for_data_paper.R": {
     "description": "Code to merge the 18S data (read count, taxonomy, and fasta files) from individual PEMA runs",
