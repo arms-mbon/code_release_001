@@ -57,6 +57,9 @@
                     "@id": "./WormsAttributes4ARMSdata.py"
                 },
                 {
+                    "@id": "./WormsAttributes4ARMSdata_4release001.py"
+                },
+                {
                     "@id": "./SpeciesListAttributes18S.csv"
                 },
                 {
@@ -229,6 +232,11 @@
             "creator": {
                 "@id": "_:KatrinaExter"
             }
+        },
+        {
+            "@id": "./WormsAttributes4ARMSdata_4release001.py",
+            "@type": "File",
+            "label": "./WormsAttributes4ARMSdata_4release001.py"
         },
         {
             "@id": "./SpeciesListAttributes18S.csv",
