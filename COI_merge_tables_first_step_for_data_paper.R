@@ -32,7 +32,6 @@ ASVcounts_Sep2020 <- separate(data = ASVcounts_Sep2020, col = "ASV_number:amplic
 
 ASVcounts_Aug2023 <- read_xlsx("Extended_final_table_August2023_COI_noBlank.xlsx")
 ASVcounts_Aug2023 <- separate(data = ASVcounts_Aug2023, col = "ASV_number:amplicon", into = c("ASV_number", "ID"), sep = "\\:")
-colnames(ASVcounts_Aug2023)[3:(ncol(ASVcounts_Aug2023)-2)]<-paste0(colnames(ASVcounts_Aug2023)[3:(ncol(ASVcounts_Aug2023)-2)], "_rep") # Because the samples of August2023 are re-sequenced samples, we need to add a string to them to distinguish their names from the samples with the same name
 
 ASVcounts_GDY <- read_xlsx("Extended_final_table_ARMS_Gdynia_GDY1_20180813_20191029_SF38_DMSO_COI_noBlank.xlsx")
 ASVcounts_GDY <- separate(data = ASVcounts_GDY, col = "ASV_number:amplicon", into = c("ASV_number", "ID"), sep = "\\:")
