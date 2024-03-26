@@ -25,7 +25,6 @@ OTUcounts_May2021 <- read_xlsx("Extended_final_table_May2021_18S_noBlank.xlsx")
 OTUcounts_Sep2020 <- read_xlsx("Extended_final_table_September2020_18S_noBlank.xlsx")
 
 OTUcounts_Aug2023 <- read_xlsx("Extended_final_table_August2023_18S_noBlank.xlsx")
-colnames(OTUcounts_Aug2023)[2:(ncol(OTUcounts_Aug2023)-2)]<-paste0(colnames(OTUcounts_Aug2023)[2:(ncol(OTUcounts_Aug2023)-2)], "_rep") # Because the samples of August2023 are re-sequenced samples, we need to add a string to them to distinguish their names from the samples with the same name
 
 OTUcounts_GDY <- read_xlsx("Extended_final_table_ARMS_Gdynia_GDY1_20180813_20191029_SF38_DMSO_18S_noBlank.xlsx")
 
