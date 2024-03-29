@@ -4,7 +4,7 @@ library(egg)
 library(grafify)
 library(phyloseq)
 library(vegan)
-library(grid)
+library(grid) # had to be called, even though it should come with ggplot??
 library(ggpubr)
 library(scales)
 library(tidyr)
