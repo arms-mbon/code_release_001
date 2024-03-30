@@ -1062,6 +1062,8 @@ length(unique(wrims$Species)) # Number of unique species
 
 all_list<-rbind(select(ambi_list,c(Species,Observatory,list)),select(wrims,c(Species,Observatory,list)),select(red_list,c(Species,Observatory,list)))
 
+all_list<-all_list %>% distinct()
+              
 all_list<-all_list %>% group_by(list) %>% # First have to create a unique identifier row for each list type before using pivot_wider
                        mutate(row = row_number()) %>%
                        pivot_wider(names_from = list, values_from = Species) %>%
