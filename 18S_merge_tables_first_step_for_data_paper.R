@@ -114,7 +114,13 @@ Taxfile[] <- lapply(Taxfile, function(x) replace(x, grepl("var\\.", x), "var."))
 
 Taxfile[] <- lapply(Taxfile, function(x) replace(x, grepl(" |X |XX|sp\\.", x), NA)) # sets all levels with a space, certain capital X strings or sp. in the string as NA
 
-Taxfile<-Taxfile[colSums(!is.na(Taxfile)) > 0] # Remove columns which are now left with NAs only
+# The code is the exact method thtwas applied for the mansucript of data_release_001. It misses a couple of species level assignments however and will trim them to Genus level only.
+# To be totally exact (or as exact as possible), line 115 could be replaced with the following two lines of code:
+# Taxfile[] <- lapply(Taxfile, function(x) replace(x, grepl("(kingdom)|(phylum)|(class)|(order)|(family)|(genus)|\\(strain\\)$|\\(species\\)$|Unknown|X |XX|sp\\.", x), NA)) # sets all levels with containing these strings as NA
+# Taxfile[] <- lapply(Taxfile, function(y) gsub(" \\(.*","", y,perl=T)) This removes everything after and including the first occurrence of " (" in some of the remaining species level assignments
+# Note that this will keep the first "Main genome" column and may also alter the number of the following columns, so some of the downstream steps (e.g. the code block starting at line 142 etc.) would then need to be adjusted a bit
+
+Taxfile<-Taxfile[colSums(!is.na(Taxfile)) > 0] # Remove columns which are now left with NAs only                    
 
 # Keep only distinct sequence-taxonomy combinations
 
