@@ -1559,6 +1559,72 @@
             "programmingLanguage": "R"
         },
         {
+            "@id": "./ITS_merge_tables_first_step_for_data_paper.R",
+            "@type": "SoftwareSourceCode",
+            "label": "./ITS_merge_tables_first_step_for_data_paper.R",
+            "description": "Code to merge the ITS data (read count, taxonomy, and fasta files) from individual PEMA runs",
+            "downloadURL": "https://data.arms-mbon.org/code_release_001/latest/#./ITS_merge_tables_first_step_for_data_paper.R",
+            "creator": {
+                "@id": "_:NaurasDaraghmeh"
+            },
+            "programmingLanguage": "R"
+        },
+        {
+            "@id": "./18S_merge_tables_first_step_for_data_paper.R",
+            "@type": "SoftwareSourceCode",
+            "label": "./18S_merge_tables_first_step_for_data_paper.R",
+            "description": "Code to merge the 18S data (read count, taxonomy, and fasta files) from individual PEMA runs",
+            "downloadURL": "https://data.arms-mbon.org/code_release_001/latest/#./18S_merge_tables_first_step_for_data_paper.R",
+            "creator": {
+                "@id": "_:NaurasDaraghmeh"
+            },
+            "programmingLanguage": "R"
+        },
+        {
+            "@id": "./WormsAttributes4ARMSdata.py",
+            "@type": "SoftwareSourceCode",
+            "label": "./WormsAttributes4ARMSdata.py",
+            "description": "Code to extract certain attributes from WoRMS for a list of AphiaIDs",
+            "downloadURL": "https://data.arms-mbon.org/code_release_001/latest/#./WormsAttributes4ARMSdata.py",
+            "creator": {
+                "@id": "_:KatrinaExter"
+            },
+            "programmingLanguage": "python"
+        },
+        {
+            "@id": "./COI_merge_tables_first_step_for_data_paper.R",
+            "@type": "SoftwareSourceCode",
+            "label": "./COI_merge_tables_first_step_for_data_paper.R",
+            "description": "Code to  merge the COI data (read count, taxonomy, and fasta files) from individual PEMA runs",
+            "downloadURL": "https://data.arms-mbon.org/code_release_001/latest/#./COI_merge_tables_first_step_for_data_paper.R",
+            "creator": {
+                "@id": "_:NaurasDaraghmeh"
+            },
+            "programmingLanguage": "R"
+        },
+        {
+            "@id": "./WormsAttributes4ARMSdata_4release001.py",
+            "@type": "SoftwareSourceCode",
+            "label": "./WormsAttributes4ARMSdata_4release001.py",
+            "description": "Code to extract certain attributes from WoRMS for a list of AphiaIDs, fine-tuned for use with these particular data",
+            "downloadURL": "https://data.arms-mbon.org/code_release_001/latest/#./WormsAttributes4ARMSdata_4release001.py",
+            "creator": {
+                "@id": "_:KatrinaExter"
+            },
+            "programmingLanguage": "python"
+        },
+        {
+            "@id": "./gene_analysis.R",
+            "@type": "SoftwareSourceCode",
+            "label": "./gene_analysis.R",
+            "description": "Code to explore the sequencing data output by the merging scripts",
+            "downloadURL": "https://data.arms-mbon.org/code_release_001/latest/#./gene_analysis.R",
+            "creator": {
+                "@id": "_:NaurasDaraghmeh"
+            },
+            "programmingLanguage": "R"
+        },
+        {
             "@id": "./final_count_taxonomy_fasta_files/18S_OTU_table.txt",
             "@type": "File",
             "label": "./final_count_taxonomy_fasta_files/18S_OTU_table.txt"
