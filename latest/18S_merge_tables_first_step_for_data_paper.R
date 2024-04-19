@@ -114,6 +114,11 @@ Taxfile[] <- lapply(Taxfile, function(x) replace(x, grepl("var\\.", x), "var."))
 
 Taxfile[] <- lapply(Taxfile, function(x) replace(x, grepl(" |X |XX|sp\\.", x), NA)) # sets all levels with a space, certain capital X strings or sp. in the string as NA
 
+# The previous line missing a couple of cases where species assignments are actually present but are in such a weird format that no general code that worked on all other cases could also retrieve those ones.
+# This happens for cases where genus and species are for example in the following format: Phascolopsis;Phascolopsis (strain);gouldii (Phascolopsis (strain))
+# The species part at the end is not recognized with the code above and we could not come up with a rule that fits takes care of all other cases as well as this one.
+# Just have to accept this for now. The taxonomy strings from some of the 18S databases are just too chaotic. 
+
 Taxfile<-Taxfile[colSums(!is.na(Taxfile)) > 0] # Remove columns which are now left with NAs only                    
 
 # Keep only distinct sequence-taxonomy combinations
