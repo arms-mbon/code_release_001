@@ -1,0 +1,27 @@
+@prefix schema: <http://schema.org/>.
+
+{%- for github in sets['github'] %}
+<> {#using keys associated with GitHub API - checkout: https://codemeta.github.io/crosswalk/github/#}
+    a schema:SoftwareSourceCode ;
+    {#- minimum properties - this info is standardly(?) available using GitHub API #}
+    {#- properties about the github repository itself #}
+    schema:identifier {{github.id}} ;
+    
+    schema:name {{github.full_name}} ;
+    schema:description {{github.description}} ;
+
+    schema:codeRepository <{{github.html_url}}> ; 
+    schema:issueTracker {{github.issues_url}} ;
+    schema:downloadUrl {{github.archive_url}} ; 
+    schema:programmingLanguage {{languages_url}} ; 
+        
+    schema:author {{github.login}} ; 
+    
+    schema:keywords {% for topic in github.topics %}{{topic}}{% if not loop.last %}, {% endif %}{% endfor %} ;
+    schema:license <{{github.license.url}}> ;
+    
+    schema:dateCreated {{github.created_at}} ;
+    schema:dateModified {{github.updated_at}} ;
+.
+{%- endfor %}
+

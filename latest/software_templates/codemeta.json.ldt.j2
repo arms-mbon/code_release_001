@@ -1,0 +1,126 @@
+{
+  "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
+  "@type": "SoftwareSourceCode",
+  {% for github in sets['github']%}
+  "identifier": "{{github.id}}",
+  "description": "{{github.description}}",
+  "name": "{{github.full_name}}",
+  "relatedLink": ["", ""],
+  "codeRepository": "{{github.html_url}}",
+  "readme": "{{github.html_url}}/blob/main/README.md",
+  "license": "{{github.license.url}}",
+
+  "issueTracker": "{{github.issues_url}}",
+  {%- endfor %}
+
+  "programmingLanguage": [
+    {%- for language in sets['languages']%}
+    "{{language | safe }}"{% if not loop.last %}, {% endif %}
+    {%- endfor %}
+  ],
+  
+  "version": "",
+  "runtimePlatform": "",
+  
+  "contributor": [
+    {%- for person in sets['contributors'] %}
+    {
+      "name": "{{person.login}}",
+      "@id": "{{person.html_url}}", {#sidenote: this is not the orcid... #}
+      "@type": "Person"
+    } {% if not loop.last %}, {% endif %}
+    {%- endfor %}
+  ],
+  "provider": {
+    "@id": "",
+    "@type": "Organization",
+    "name": "",
+    "url": ""
+  },
+  "author": [
+    {
+      "@type": "Person",
+      "givenName": "",
+      "familyName": "",
+      "email": "",
+      "@id": "https://orcid.org/..."
+    },
+    {
+      "@type": "Person",
+      "givenName": "",
+      "familyName": "",
+      "@id": "https://orcid.org/..."
+    }
+  ],
+  "copyrightHolder": [
+    {
+      "@type": "Person",
+      "givenName": "",
+      "familyName": "",
+      "email": "",
+      "@id": "https://orcid.org/..."
+    }
+  ],
+  "funder": [
+    {
+      "@type": "Organization",
+      "name": ""
+    }
+  ],
+  "maintainer": [
+    {
+      "@type": "Person",
+      "givenName": "",
+      "familyName": "",
+      "email": "",
+      "@id": "https://orcid.org/..."
+    }
+  ],
+  "softwareSuggestions": [
+    {
+      "@type": "SoftwareApplication",
+      "identifier": "",
+      "name": "",
+      "provider": {
+        "@id": "",
+        "@type": "Organization",
+        "name": "",
+        "url": ""
+      },
+      "sameAs": ""
+    }
+  ],
+  "softwareRequirements": { {#retrievable via github api, from e.g. requirements.txt, package.json, Gemfile, Pipfile, ... but requires some more handling #}
+    "1": {
+      "@type": "SoftwareApplication",
+      "identifier": "",
+      "name": "",
+      "version": ""
+    },
+    "2": {
+      "@type": "SoftwareApplication",
+      "identifier": "",
+      "name": "",
+      "provider": {
+        "@id": "",
+        "@type": "Organization",
+        "name": "",
+        "url": ""
+      },
+      "sameAs": ""
+    },
+    "SystemRequirements": null
+  },
+  "isPartOf": "",
+  "keywords": ["", ""],
+  "fileSize": "",
+  "releaseNotes": "",
+  
+  "contIntegration": ["https://github.com/ropensci/codemetar/actions", "https://codecov.io/github/ropensci/codemetar?branch=main"],
+  "developmentStatus": "https://www.repostatus.org/",
+  "review": {
+    "@type": "Review",
+    "url": "https://github.com/ropensci/software-review/issues/130",
+    "provider": "https://ropensci.org"
+  }
+}

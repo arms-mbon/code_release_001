@@ -1,0 +1,131 @@
+{
+  "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
+  "@type": "SoftwareSourceCode",
+  
+  "identifier": "757421017",
+  "description": "Knowledge Graph Analysis Platform",
+  "name": "vliz-be-opsci/k-gap",
+  "relatedLink": ["", ""],
+  "codeRepository": "https://github.com/vliz-be-opsci/k-gap",
+  "issueTracker": "https://api.github.com/repos/vliz-be-opsci/k-gap/issues{/number}",
+  "license": "https://api.github.com/licenses/mit",
+
+  "readme": "https://github.com/vliz-be-opsci/k-gap/blob/main/README.md",
+
+  "version": "",
+
+  "programmingLanguage": [
+    "{'Shell': 6169, 'Makefile': 2529, 'Python': 1807, 'Dockerfile': 693, 'Jupyter Notebook': 298}"
+  ],
+  "runtimePlatform": "",
+  "provider": {
+    "@id": "",
+    "@type": "Organization",
+    "name": "",
+    "url": ""
+  },
+  "author": [
+    {
+      "@type": "Person",
+      "givenName": "",
+      "familyName": "",
+      "email": "",
+      "@id": "https://orcid.org/..."
+    },
+    {
+      "@type": "Person",
+      "givenName": "",
+      "familyName": "",
+      "@id": "https://orcid.org/..."
+    }
+  ],
+  
+  "contributor": [
+    {
+      "name": "marc-portier",
+      "@id": "https://github.com/marc-portier", 
+      "@type": "Person"
+    } , 
+    {
+      "name": "cedricdcc",
+      "@id": "https://github.com/cedricdcc", 
+      "@type": "Person"
+    } , 
+    {
+      "name": "bulricht",
+      "@id": "https://github.com/bulricht", 
+      "@type": "Person"
+    } 
+  ],
+  "copyrightHolder": [
+    {
+      "@type": "Person",
+      "givenName": "",
+      "familyName": "",
+      "email": "",
+      "@id": "https://orcid.org/..."
+    }
+  ],
+  "funder": [
+    {
+      "@type": "Organization",
+      "name": ""
+    }
+  ],
+  "maintainer": [
+    {
+      "@type": "Person",
+      "givenName": "",
+      "familyName": "",
+      "email": "",
+      "@id": "https://orcid.org/..."
+    }
+  ],
+  "softwareSuggestions": [
+    {
+      "@type": "SoftwareApplication",
+      "identifier": "",
+      "name": "",
+      "provider": {
+        "@id": "",
+        "@type": "Organization",
+        "name": "",
+        "url": ""
+      },
+      "sameAs": ""
+    }
+  ],
+  "softwareRequirements": {
+    "1": {
+      "@type": "SoftwareApplication",
+      "identifier": "",
+      "name": "",
+      "version": ""
+    },
+    "2": {
+      "@type": "SoftwareApplication",
+      "identifier": "",
+      "name": "",
+      "provider": {
+        "@id": "",
+        "@type": "Organization",
+        "name": "",
+        "url": ""
+      },
+      "sameAs": ""
+    },
+    "SystemRequirements": null
+  },
+  "isPartOf": "",
+  "keywords": ["", ""],
+  "fileSize": "",
+  "releaseNotes": "",
+  
+  "contIntegration": ["https://github.com/ropensci/codemetar/actions", "https://codecov.io/github/ropensci/codemetar?branch=main"],
+  "developmentStatus": "https://www.repostatus.org/",
+  "review": {
+    "@type": "Review",
+    "url": "https://github.com/ropensci/software-review/issues/130",
+    "provider": "https://ropensci.org"
+  }
+}
