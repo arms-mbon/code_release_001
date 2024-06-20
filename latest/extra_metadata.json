@@ -16,7 +16,7 @@
     "publisher": { "@id": "_:VLIZ" },
     "ContactPoint": [
       "opsci@vliz.be",
-      "matthias.obst@marine.gu.se"
+      { "@id": "_:MatthiasObst" },
     ],
     "description": "All the code and selected outputs that were used/generated in the analysis of the ARMS-MBON species results for the first data release.",
     "dct:relation": [ "https://github.com/arms-mbon/analysis_release_001", "https://github.com/arms-mbon/data_release_001" ],
@@ -61,6 +61,9 @@
     "@type": "Organization",
     "name": "Flanders Marine Institute",
     "url": "https://www.vliz.be/en"
+  },
+  "./codemeta.json":{
+    "description":"Metadata for the code following the recommendations of CodeMeta Project (https://codemeta.github.io/)"
   },
   "./WormsAttributes4ARMSdata.py": {
     "description": "Code to extract certain attributes from WoRMS for a list of AphiaIDs",
