@@ -1,0 +1,212 @@
+{
+  "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
+  "@type": "SoftwareSourceCode",
+  "description": "Code used for the analysis of the ARMS-MBON data for the data paper with associated repo https://github.com/arms-mbon/data_release_001",
+  "name": "code_release_001",
+  "codeRepository": "https://github.com/arms-mbon/code_release_001",
+  "issueTracker": "https://github.com/arms-mbon/code_release_001/issues",
+  "license": "https://creativecommons.org/public-domain/cc0/",
+  "version": "1",
+  "datePublished": "2024-05-01",
+  "programmingLanguage": [
+    {
+      "@type": "ComputerLanguage",
+      "name": "Python",
+      "url": "https://www.python.org/"
+    },
+    {
+      "@type": "ComputerLanguage",
+      "name": "R",
+      "url": "https://www.r-project.org/"
+    }
+    {
+      "@type": "ComputerLanguage",
+      "name": "RStudio",
+      "url": "https://posit.co/products/open-source/rstudio/"
+    }
+  ],
+  "operatingSystem": "Windows 10",
+  "runtimePlatform": [ "Python 3.10.7", "R 4.1.0", "RStudio 2022.07.1" ],
+  "provider": [
+    {
+      "@type": "Person",
+      "givenName": "Katrina",
+      "familyName": "Exter",
+      "email": "katrina.exter@vliz.be",
+      "@id": "https://orcid.org/0000-0002-5911-1536"
+    },
+    {
+      "@type": "Person",
+      "givenName": "Nauras",
+      "familyName": "Daraghmeh",
+      "email": "naurasd@googlemail.com",
+      "@id": "https://orcid.org/0000-0001-82
+    }
+  ],
+  "copyrightHolder": [
+    {
+      "@type": "Person",
+      "givenName": "Katrina",
+      "familyName": "Exter",
+      "email": "katrina.exter@vliz.be",
+      "@id": "https://orcid.org/0000-0002-5911-1536"
+    },
+    {
+      "@type": "Person",
+      "givenName": "Nauras",
+      "familyName": "Daraghmeh",
+      "email": "naurasd@googlemail.com",
+      "@id": "https://orcid.org/0000-0001-82
+    }
+  ],
+  "funder": [
+    {
+      "@type": "Organization",
+      "url": "https://marcobolo-project.eu/",
+      "name": "MARCO BOLO",
+      "GRANTXXXXXXX???":  ??????????????????
+    }
+  ],
+  "maintainer": [
+    {
+      "@type": "Person",
+      "givenName": "Katrina",
+      "familyName": "Exter",
+      "email": "katrina.exter@vliz.be",
+      "@id": "https://orcid.org/0000-0002-5911-1536"
+    },
+    {
+      "@type": "Person",
+      "givenName": "Nauras",
+      "familyName": "Daraghmeh",
+      "email": "naurasd@googlemail.com",
+      "@id": "https://orcid.org/0000-0001-82
+    }
+  ],
+  "softwareRequirements": {
+    "1": {
+      "@type": "SoftwareApplication",
+      "identifier": "https://www.tidyverse.org/",
+      "name": "tidyverse",
+      "version": "1.3.1"
+    },
+    "2": {
+      "@type": "SoftwareApplication",
+      "identifier": "https://bioconductor.org/packages/release/bioc/html/Biostrings.html",
+      "name": "bioconductor",
+      "version": "2.60.2"
+    },
+    "3": {
+      "@type": "SoftwareApplication",
+      "identifier": "https://joey711.github.io/phyloseq/",
+      "name": "phylosec",
+      "version": "1.36.0"
+    },
+    "4": {
+      "@type": "SoftwareApplication",
+      "identifier": "https://github.com/vegandevs/vegan",
+      "name": "vegan",
+      "version": "2.6.2"
+    },
+    "5": {
+      "@type": "SoftwareApplication",
+      "identifier": "https://rpkgs.datanovia.com/ggpubr/",
+      "name": "ggpubr",
+      "version": "0.4.0"
+    },
+    "6": {
+      "@type": "SoftwareApplication",
+      "identifier": "https://grafify-vignettes.netlify.app/",
+      "name": "grafify",
+      "version": "4.0"
+    },
+    "7": {
+      "@type": "SoftwareApplication",
+      "identifier": "https://github.com/hadley/plyr",
+      "name": "plyr",
+      "version": "1.8.7"
+    },
+    "8": {
+      "@type": "SoftwareApplication",
+      "identifier": "https://scales.r-lib.org/",
+      "name": "scales",
+      "version": "1.3.0"
+    },
+    "9": {
+      "@type": "SoftwareApplication",
+      "identifier": "https://cran.r-project.org/web/packages/egg/index.html",
+      "name": "egg",
+      "version": "0.4.5"
+    },
+    "10": {
+      "@type": "SoftwareApplication",
+      "identifier": "https://github.com/hms-dbmi/UpSetR",
+      "name": "UpSetR",
+      "version": "1.4.0"
+    },
+    "11": {
+      "@type": "SoftwareApplication",
+      "identifier": "https://github.com/colearendt/xlsx",
+      "name": "xlsx",
+      "version": "0.6.5"
+    },
+    "12": {
+      "@type": "SoftwareApplication",
+      "identifier": "https://docs.ropensci.org/writexl/",
+      "name": "writexl",
+      "version": "1.5.0"
+    },
+    "13": {
+      "@type": "SoftwareApplication",
+      "identifier": "https://ycphs.github.io/openxlsx/index.html",
+      "name": "openxlsx",
+      "version": "4.2.5"
+    },
+    "14": {
+      "@type": "SoftwareApplication",
+      "identifier": "https://pypi.org/project/ncbi-taxonomist/",
+      "name": "ncbitaxonomist",
+      "version": "1.2.1"
+    },
+    "15": {
+      "@type": "SoftwareApplication",
+      "identifier": ""https://pypi.org/project/requests/",
+      "name": "requests",
+      "version": "2.28.1"
+    },
+    "16": {
+      "@type": "SoftwareApplication",
+      "identifier": "https://pypi.org/project/json2/",
+      "name": "json"
+    },
+    "17": {
+      "@type": "SoftwareApplication",
+      "identifier": "https://github.com/python/cpython/blob/3.12/Lib/os.py",
+      "name": "os"
+    },
+    "18": {
+      "@type": "SoftwareApplication",
+      "name": "sys"
+    },
+    "19": {
+      "@type": "SoftwareApplication",
+      "name": "csv"
+    },
+    "20": {
+      "@type": "SoftwareApplication",
+      "name": "time"
+    },
+    "21": {
+      "@type": "SoftwareApplication",
+      "identifier": "https://pypi.org/project/argparse/",
+      "name": "argparse"
+    },
+    "22": {
+      "@type": "SoftwareApplication",
+      "name": "copy"
+    }
+  },
+  "isPartOf": "{link of other things this repository is part of (e.g. GitHub repo, workflows, datasets, ...}",
+  "keywords": [ "Ecological value assessment", "biodiversity or https://aims.fao.org/aos/agrovoc/c_33949.html" ],
+  "readme": "https://github.com/lifewatch/eva/blob/main/Readme.md"
+}
