@@ -63,7 +63,23 @@
     "url": "https://www.vliz.be/en"
   },
   "./codemeta.json":{
-    "description":"Metadata for the code following the recommendations of CodeMeta Project (https://codemeta.github.io/)"
+    "description":"Metadata for the code following the recommendations of CodeMeta Project (https://codemeta.github.io/)",
+    "downloadURL": "https://data.arms-mbon.org/code_release_001/latest/#./codemeta.json",
+    "creator": { "@id": "_:KatrinaExter" }
+  },
+  "./FixPEMAtaxassigments_18S_taxonomist.py":{
+    "descriptiion":"Code to curate the taxonomic assignments of the 18S PEMA OTU tables and add the NCBI IDs to the new scientific names",
+    "downloadURL": "https://data.arms-mbon.org/code_release_001/latest/#./FixPEMAtaxassigments_18S_taxonomist.py",
+    "creator": { "@id": "_:KatrinaExter" },
+    "@type": "SoftwareSourceCode",
+    "programmingLanguage": "python"    
+  },
+    "./FixPEMAtaxassigments_COI_taxonomist.py":{
+    "descriptiion":"Code to take the species names from the taxonomic assignment files and add to the OTU tables; add the NCBI ID for the species name",
+    "downloadURL": "https://data.arms-mbon.org/code_release_001/latest/#./FixPEMAtaxassigments_COI_taxonomist.py",
+    "creator": { "@id": "_:KatrinaExter" },
+    "@type": "SoftwareSourceCode",
+    "programmingLanguage": "python"    
   },
   "./WormsAttributes4ARMSdata.py": {
     "description": "Code to extract certain attributes from WoRMS for a list of AphiaIDs",
