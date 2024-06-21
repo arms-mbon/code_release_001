@@ -1,7 +1,7 @@
 {
   "@context": "https://doi.org/10.5063/schema/codemeta-2.0",
   "@type": "SoftwareSourceCode",
-  "description": "Code used for the analysis of the ARMS-MBON data for the data paper with associated repo https://github.com/arms-mbon/data_release_001",
+  "description": "All the codes used for the analysis of the ARMS-MBON data for the data paper with associated repo https://github.com/arms-mbon/data_release_001",
   "name": "code_release_001",
   "codeRepository": "https://github.com/arms-mbon/code_release_001",
   "issueTracker": "https://github.com/arms-mbon/code_release_001/issues",
