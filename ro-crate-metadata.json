@@ -17,10 +17,13 @@
             "label": "./final_count_taxonomy_fasta_files/",
             "hasPart": [
                 {
-                    "@id": "./final_count_taxonomy_fasta_files/18S_OTU_table.txt"
+                    "@id": "./final_count_taxonomy_fasta_files/COI_ASV_table.txt"
                 },
                 {
                     "@id": "./final_count_taxonomy_fasta_files/18S_OTUs.fa"
+                },
+                {
+                    "@id": "./final_count_taxonomy_fasta_files/18S_tax_table.txt"
                 },
                 {
                     "@id": "./final_count_taxonomy_fasta_files/COI_ASVs.fa"
@@ -32,24 +35,49 @@
                     "@id": "./final_count_taxonomy_fasta_files/COI_tax_table.txt"
                 },
                 {
-                    "@id": "./final_count_taxonomy_fasta_files/COI_ASV_table.txt"
-                },
-                {
-                    "@id": "./final_count_taxonomy_fasta_files/18S_tax_table.txt"
-                },
-                {
                     "@id": "./final_count_taxonomy_fasta_files/ITS_tax_table.txt"
+                },
+                {
+                    "@id": "./final_count_taxonomy_fasta_files/18S_OTU_table.txt"
                 },
                 {
                     "@id": "./final_count_taxonomy_fasta_files/ITS_ASV_table.txt"
                 }
-            ],
-            "description": "The output of the R scripts to merge the relevant data from the individual PEMA runs. Final ASV/OTU count tables, taxonomy tables, and fasta files for each marker gene ",
-            "downloadURL": "https://data.arms-mbon.org/code_release_001/latest/#./final_count_taxonomy_fasta_files/",
-            "creator": {
-                "id": "_:NaurasDaraghmeh"
-            },
-            "dct:relation": "https://github.com/arms-mbon/code_release_001/blob/main/gene_analysis.R"
+            ]
+        },
+        {
+            "@id": "./software_templates/",
+            "@type": "Dataset",
+            "label": "./software_templates/",
+            "hasPart": [
+                {
+                    "@id": "./software_templates/vliz-be-opsci_k-gap_languages.json"
+                },
+                {
+                    "@id": "./software_templates/vliz-be-opsci_k-gap_github.json"
+                },
+                {
+                    "@id": "./software_templates/test_codemeta.jsonld"
+                },
+                {
+                    "@id": "./software_templates/codemeta.json.ldt.j2"
+                },
+                {
+                    "@id": "./software_templates/vliz-be-opsci_k-gap_contributors.json"
+                },
+                {
+                    "@id": "./software_templates/codemeta.json"
+                },
+                {
+                    "@id": "./software_templates/vliz-be-opsci_k-gap_requirements.json"
+                },
+                {
+                    "@id": "./software_templates/github_repo.ttl.ldt.j2"
+                },
+                {
+                    "@id": "./software_templates/get_github_info.py"
+                }
+            ]
         },
         {
             "@id": "./",
@@ -60,82 +88,47 @@
                     "@id": "./final_count_taxonomy_fasta_files/"
                 },
                 {
-                    "@id": "./ITS_merge_tables_first_step_for_data_paper.R"
+                    "@id": "./software_templates/"
                 },
                 {
                     "@id": "./18S_merge_tables_first_step_for_data_paper.R"
                 },
                 {
-                    "@id": "./WormsAttributes4ARMSdata.py"
-                },
-                {
-                    "@id": "./palette.txt"
-                },
-                {
-                    "@id": "./SpeciesListAttributesCOI.csv"
-                },
-                {
-                    "@id": "./sample_data.txt"
-                },
-                {
-                    "@id": "./COI_merge_tables_first_step_for_data_paper.R"
+                    "@id": "./WormsAttributes4ARMSdata_4release001.py"
                 },
                 {
                     "@id": "./SpeciesListAttributes18S.csv"
                 },
                 {
-                    "@id": "./WormsAttributes4ARMSdata_4release001.py"
-                },
-                {
                     "@id": "./gene_analysis.R"
+                },
+                {
+                    "@id": "./sample_data.txt"
+                },
+                {
+                    "@id": "./palette.txt"
+                },
+                {
+                    "@id": "./FixPEMAtaxassigments_18S_taxonomist.py"
+                },
+                {
+                    "@id": "./COI_merge_tables_first_step_for_data_paper.R"
+                },
+                {
+                    "@id": "./ITS_merge_tables_first_step_for_data_paper.R"
+                },
+                {
+                    "@id": "./FixPEMAtaxassigments_COI_taxonomist.py"
+                },
+                {
+                    "@id": "./codemeta.json"
+                },
+                {
+                    "@id": "./SpeciesListAttributesCOI.csv"
+                },
+                {
+                    "@id": "./WormsAttributes4ARMSdata.py"
                 }
-            ],
-            "license": "https://creativecommons.org/public-domain/cc0/",
-            "title": "code_release_001",
-            "wasAssociatedWith": [
-                {
-                    "@id": "_:MatthiasObst"
-                },
-                {
-                    "@id": "_:KatrinaExter"
-                },
-                {
-                    "@id": "_:NaurasDaraghmeh"
-                }
-            ],
-            "creator": [
-                {
-                    "@id": "_:KatrinaExter"
-                },
-                {
-                    "@id": "_:NaurasDaraghmeh"
-                },
-                {
-                    "@id": "_:ARMSProject"
-                },
-                {
-                    "@id": "_:AssemblePlus"
-                }
-            ],
-            "publisher": {
-                "@id": "_:VLIZ"
-            },
-            "ContactPoint": [
-                "opsci@vliz.be",
-                "matthias.obst@marine.gu.se"
-            ],
-            "description": "All the code and selected outputs that were used/generated in the analysis of the ARMS-MBON species results for the first data release.",
-            "dct:relation": [
-                "https://github.com/arms-mbon/analysis_release_001",
-                "https://github.com/arms-mbon/data_release_001"
-            ],
-            "keywords": [
-                "ARMS",
-                "MBON",
-                "https://www.marinespecies.org/",
-                "software",
-                "python",
-                "R"
             ]
         },
         {
@@ -1625,51 +1618,6 @@
             "programmingLanguage": "R"
         },
         {
-            "@id": "./final_count_taxonomy_fasta_files/18S_OTU_table.txt",
-            "@type": "File",
-            "label": "./final_count_taxonomy_fasta_files/18S_OTU_table.txt"
-        },
-        {
-            "@id": "./final_count_taxonomy_fasta_files/18S_OTUs.fa",
-            "@type": "File",
-            "label": "./final_count_taxonomy_fasta_files/18S_OTUs.fa"
-        },
-        {
-            "@id": "./final_count_taxonomy_fasta_files/COI_ASVs.fa",
-            "@type": "File",
-            "label": "./final_count_taxonomy_fasta_files/COI_ASVs.fa"
-        },
-        {
-            "@id": "./final_count_taxonomy_fasta_files/ITS_ASVs.fa",
-            "@type": "File",
-            "label": "./final_count_taxonomy_fasta_files/ITS_ASVs.fa"
-        },
-        {
-            "@id": "./final_count_taxonomy_fasta_files/COI_tax_table.txt",
-            "@type": "File",
-            "label": "./final_count_taxonomy_fasta_files/COI_tax_table.txt"
-        },
-        {
-            "@id": "./final_count_taxonomy_fasta_files/COI_ASV_table.txt",
-            "@type": "File",
-            "label": "./final_count_taxonomy_fasta_files/COI_ASV_table.txt"
-        },
-        {
-            "@id": "./final_count_taxonomy_fasta_files/18S_tax_table.txt",
-            "@type": "File",
-            "label": "./final_count_taxonomy_fasta_files/18S_tax_table.txt"
-        },
-        {
-            "@id": "./final_count_taxonomy_fasta_files/ITS_tax_table.txt",
-            "@type": "File",
-            "label": "./final_count_taxonomy_fasta_files/ITS_tax_table.txt"
-        },
-        {
-            "@id": "./final_count_taxonomy_fasta_files/ITS_ASV_table.txt",
-            "@type": "File",
-            "label": "./final_count_taxonomy_fasta_files/ITS_ASV_table.txt"
-        },
-        {
             "@id": "./ITS_merge_tables_first_step_for_data_paper.R",
             "@type": "SoftwareSourceCode",
             "label": "./ITS_merge_tables_first_step_for_data_paper.R",
@@ -1703,35 +1651,6 @@
             "programmingLanguage": "python"
         },
         {
-            "@id": "./palette.txt",
-            "@type": "File",
-            "label": "./palette.txt"
-        },
-        {
-            "@id": "./SpeciesListAttributesCOI.csv",
-            "@type": "File",
-            "label": "./SpeciesListAttributesCOI.csv",
-            "description": "Output from WormsAttributes4ARMSdata_4release001.py for COI",
-            "downloadURL": "https://data.arms-mbon.org/code_release_001/latest/#./SpeciesListAttributesCOI.csv",
-            "creator": {
-                "@id": "_:KatrinaExter"
-            },
-            "wasDerivedFrom": "https://github.com/arms-mbon/code_release_001/blob/main/WormsAttributes4ARMSdata_4release001.py",
-            "fileFormat": "csv"
-        },
-        {
-            "@id": "./sample_data.txt",
-            "@type": "File",
-            "label": "./sample_data.txt",
-            "description": "Input file for the gene analysis",
-            "downloadURL": "https://data.arms-mbon.org/code_release_001/latest/#./sample_data.txt",
-            "creator": {
-                "@id": "_:NaurasDaraghmeh"
-            },
-            "fileFormat": "Text",
-            "dct:relation": "https://github.com/arms-mbon/code_release_001/blob/main/gene_analysis.R"
-        },
-        {
             "@id": "./COI_merge_tables_first_step_for_data_paper.R",
             "@type": "SoftwareSourceCode",
             "label": "./COI_merge_tables_first_step_for_data_paper.R",
@@ -1741,18 +1660,6 @@
                 "@id": "_:NaurasDaraghmeh"
             },
             "programmingLanguage": "R"
-        },
-        {
-            "@id": "./SpeciesListAttributes18S.csv",
-            "@type": "File",
-            "label": "./SpeciesListAttributes18S.csv",
-            "description": "Output from WormsAttributes4ARMSdata_4release001.py for 18S",
-            "downloadURL": "https://data.arms-mbon.org/code_release_001/latest/#./SpeciesListAttributes18S.csv",
-            "creator": {
-                "@id": "_:KatrinaExter"
-            },
-            "wasDerivedFrom": "https://github.com/arms-mbon/code_release_001/blob/main/WormsAttributes4ARMSdata_4release001.py",
-            "fileFormat": "csv"
         },
         {
             "@id": "./WormsAttributes4ARMSdata_4release001.py",
@@ -1775,6 +1682,248 @@
                 "@id": "_:NaurasDaraghmeh"
             },
             "programmingLanguage": "R"
+        },
+        {
+            "@id": "./COI_merge_tables_first_step_for_data_paper.R",
+            "@type": "SoftwareSourceCode",
+            "label": "./COI_merge_tables_first_step_for_data_paper.R",
+            "description": "Code to  merge the COI data (read count, taxonomy, and fasta files) from individual PEMA runs",
+            "downloadURL": "https://data.arms-mbon.org/code_release_001/latest/#./COI_merge_tables_first_step_for_data_paper.R",
+            "creator": {
+                "@id": "_:NaurasDaraghmeh"
+            },
+            "programmingLanguage": "R"
+        },
+        {
+            "@id": "./ITS_merge_tables_first_step_for_data_paper.R",
+            "@type": "SoftwareSourceCode",
+            "label": "./ITS_merge_tables_first_step_for_data_paper.R",
+            "description": "Code to merge the ITS data (read count, taxonomy, and fasta files) from individual PEMA runs",
+            "downloadURL": "https://data.arms-mbon.org/code_release_001/latest/#./ITS_merge_tables_first_step_for_data_paper.R",
+            "creator": {
+                "@id": "_:NaurasDaraghmeh"
+            },
+            "programmingLanguage": "R"
+        },
+        {
+            "@id": "./WormsAttributes4ARMSdata_4release001.py",
+            "@type": "SoftwareSourceCode",
+            "label": "./WormsAttributes4ARMSdata_4release001.py",
+            "description": "Code to extract certain attributes from WoRMS for a list of AphiaIDs, fine-tuned for use with these particular data",
+            "downloadURL": "https://data.arms-mbon.org/code_release_001/latest/#./WormsAttributes4ARMSdata_4release001.py",
+            "creator": {
+                "@id": "_:KatrinaExter"
+            },
+            "programmingLanguage": "python"
+        },
+        {
+            "@id": "./18S_merge_tables_first_step_for_data_paper.R",
+            "@type": "SoftwareSourceCode",
+            "label": "./18S_merge_tables_first_step_for_data_paper.R",
+            "description": "Code to merge the 18S data (read count, taxonomy, and fasta files) from individual PEMA runs",
+            "downloadURL": "https://data.arms-mbon.org/code_release_001/latest/#./18S_merge_tables_first_step_for_data_paper.R",
+            "creator": {
+                "@id": "_:NaurasDaraghmeh"
+            },
+            "programmingLanguage": "R"
+        },
+        {
+            "@id": "./WormsAttributes4ARMSdata.py",
+            "@type": "SoftwareSourceCode",
+            "label": "./WormsAttributes4ARMSdata.py",
+            "description": "Code to extract certain attributes from WoRMS for a list of AphiaIDs",
+            "downloadURL": "https://data.arms-mbon.org/code_release_001/latest/#./WormsAttributes4ARMSdata.py",
+            "creator": {
+                "@id": "_:KatrinaExter"
+            },
+            "programmingLanguage": "python"
+        },
+        {
+            "@id": "./gene_analysis.R",
+            "@type": "SoftwareSourceCode",
+            "label": "./gene_analysis.R",
+            "description": "Code to explore the sequencing data output by the merging scripts",
+            "downloadURL": "https://data.arms-mbon.org/code_release_001/latest/#./gene_analysis.R",
+            "creator": {
+                "@id": "_:NaurasDaraghmeh"
+            },
+            "programmingLanguage": "R"
+        },
+        {
+            "@id": "./final_count_taxonomy_fasta_files/COI_ASV_table.txt",
+            "@type": "File",
+            "label": "./final_count_taxonomy_fasta_files/COI_ASV_table.txt"
+        },
+        {
+            "@id": "./final_count_taxonomy_fasta_files/18S_OTUs.fa",
+            "@type": "File",
+            "label": "./final_count_taxonomy_fasta_files/18S_OTUs.fa"
+        },
+        {
+            "@id": "./final_count_taxonomy_fasta_files/18S_tax_table.txt",
+            "@type": "File",
+            "label": "./final_count_taxonomy_fasta_files/18S_tax_table.txt"
+        },
+        {
+            "@id": "./final_count_taxonomy_fasta_files/COI_ASVs.fa",
+            "@type": "File",
+            "label": "./final_count_taxonomy_fasta_files/COI_ASVs.fa"
+        },
+        {
+            "@id": "./final_count_taxonomy_fasta_files/ITS_ASVs.fa",
+            "@type": "File",
+            "label": "./final_count_taxonomy_fasta_files/ITS_ASVs.fa"
+        },
+        {
+            "@id": "./final_count_taxonomy_fasta_files/COI_tax_table.txt",
+            "@type": "File",
+            "label": "./final_count_taxonomy_fasta_files/COI_tax_table.txt"
+        },
+        {
+            "@id": "./final_count_taxonomy_fasta_files/ITS_tax_table.txt",
+            "@type": "File",
+            "label": "./final_count_taxonomy_fasta_files/ITS_tax_table.txt"
+        },
+        {
+            "@id": "./final_count_taxonomy_fasta_files/18S_OTU_table.txt",
+            "@type": "File",
+            "label": "./final_count_taxonomy_fasta_files/18S_OTU_table.txt"
+        },
+        {
+            "@id": "./final_count_taxonomy_fasta_files/ITS_ASV_table.txt",
+            "@type": "File",
+            "label": "./final_count_taxonomy_fasta_files/ITS_ASV_table.txt"
+        },
+        {
+            "@id": "./software_templates/vliz-be-opsci_k-gap_languages.json",
+            "@type": "File",
+            "label": "./software_templates/vliz-be-opsci_k-gap_languages.json"
+        },
+        {
+            "@id": "./software_templates/vliz-be-opsci_k-gap_github.json",
+            "@type": "File",
+            "label": "./software_templates/vliz-be-opsci_k-gap_github.json"
+        },
+        {
+            "@id": "./software_templates/test_codemeta.jsonld",
+            "@type": "File",
+            "label": "./software_templates/test_codemeta.jsonld"
+        },
+        {
+            "@id": "./software_templates/codemeta.json.ldt.j2",
+            "@type": "File",
+            "label": "./software_templates/codemeta.json.ldt.j2"
+        },
+        {
+            "@id": "./software_templates/vliz-be-opsci_k-gap_contributors.json",
+            "@type": "File",
+            "label": "./software_templates/vliz-be-opsci_k-gap_contributors.json"
+        },
+        {
+            "@id": "./software_templates/codemeta.json",
+            "@type": "File",
+            "label": "./software_templates/codemeta.json"
+        },
+        {
+            "@id": "./software_templates/vliz-be-opsci_k-gap_requirements.json",
+            "@type": "File",
+            "label": "./software_templates/vliz-be-opsci_k-gap_requirements.json"
+        },
+        {
+            "@id": "./software_templates/github_repo.ttl.ldt.j2",
+            "@type": "File",
+            "label": "./software_templates/github_repo.ttl.ldt.j2"
+        },
+        {
+            "@id": "./software_templates/get_github_info.py",
+            "@type": "File",
+            "label": "./software_templates/get_github_info.py"
+        },
+        {
+            "@id": "./18S_merge_tables_first_step_for_data_paper.R",
+            "@type": "File",
+            "label": "./18S_merge_tables_first_step_for_data_paper.R"
+        },
+        {
+            "@id": "./WormsAttributes4ARMSdata_4release001.py",
+            "@type": "File",
+            "label": "./WormsAttributes4ARMSdata_4release001.py"
+        },
+        {
+            "@id": "./SpeciesListAttributes18S.csv",
+            "@type": "File",
+            "label": "./SpeciesListAttributes18S.csv",
+            "description": "Output from WormsAttributes4ARMSdata_4release001.py for 18S",
+            "downloadURL": "https://data.arms-mbon.org/code_release_001/latest/#./SpeciesListAttributes18S.csv",
+            "creator": {
+                "@id": "_:KatrinaExter"
+            },
+            "wasDerivedFrom": "https://github.com/arms-mbon/code_release_001/blob/main/WormsAttributes4ARMSdata_4release001.py",
+            "fileFormat": "csv"
+        },
+        {
+            "@id": "./gene_analysis.R",
+            "@type": "File",
+            "label": "./gene_analysis.R"
+        },
+        {
+            "@id": "./sample_data.txt",
+            "@type": "File",
+            "label": "./sample_data.txt",
+            "description": "Input file for the gene analysis",
+            "downloadURL": "https://data.arms-mbon.org/code_release_001/latest/#./sample_data.txt",
+            "creator": {
+                "@id": "_:NaurasDaraghmeh"
+            },
+            "fileFormat": "Text",
+            "dct:relation": "https://github.com/arms-mbon/code_release_001/blob/main/gene_analysis.R"
+        },
+        {
+            "@id": "./palette.txt",
+            "@type": "File",
+            "label": "./palette.txt"
+        },
+        {
+            "@id": "./FixPEMAtaxassigments_18S_taxonomist.py",
+            "@type": "File",
+            "label": "./FixPEMAtaxassigments_18S_taxonomist.py"
+        },
+        {
+            "@id": "./COI_merge_tables_first_step_for_data_paper.R",
+            "@type": "File",
+            "label": "./COI_merge_tables_first_step_for_data_paper.R"
+        },
+        {
+            "@id": "./ITS_merge_tables_first_step_for_data_paper.R",
+            "@type": "File",
+            "label": "./ITS_merge_tables_first_step_for_data_paper.R"
+        },
+        {
+            "@id": "./FixPEMAtaxassigments_COI_taxonomist.py",
+            "@type": "File",
+            "label": "./FixPEMAtaxassigments_COI_taxonomist.py"
+        },
+        {
+            "@id": "./codemeta.json",
+            "@type": "File",
+            "label": "./codemeta.json"
+        },
+        {
+            "@id": "./SpeciesListAttributesCOI.csv",
+            "@type": "File",
+            "label": "./SpeciesListAttributesCOI.csv",
+            "description": "Output from WormsAttributes4ARMSdata_4release001.py for COI",
+            "downloadURL": "https://data.arms-mbon.org/code_release_001/latest/#./SpeciesListAttributesCOI.csv",
+            "creator": {
+                "@id": "_:KatrinaExter"
+            },
+            "wasDerivedFrom": "https://github.com/arms-mbon/code_release_001/blob/main/WormsAttributes4ARMSdata_4release001.py",
+            "fileFormat": "csv"
+        },
+        {
+            "@id": "./WormsAttributes4ARMSdata.py",
+            "@type": "File",
+            "label": "./WormsAttributes4ARMSdata.py"
         }
     ]
 }
