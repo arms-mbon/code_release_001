@@ -121,6 +121,9 @@
                     "@id": "./FixPEMAtaxassigments_COI_taxonomist.py"
                 },
                 {
+                    "@id": "./codemeta.json"
+                },
+                {
                     "@id": "./SpeciesListAttributesCOI.csv"
                 },
                 {
@@ -1899,6 +1902,11 @@
             "@id": "./FixPEMAtaxassigments_COI_taxonomist.py",
             "@type": "File",
             "label": "./FixPEMAtaxassigments_COI_taxonomist.py"
+        },
+        {
+            "@id": "./codemeta.json",
+            "@type": "File",
+            "label": "./codemeta.json"
         },
         {
             "@id": "./SpeciesListAttributesCOI.csv",
