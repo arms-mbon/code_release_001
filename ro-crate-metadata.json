@@ -17,65 +17,31 @@
             "label": "./final_count_taxonomy_fasta_files/",
             "hasPart": [
                 {
+                    "@id": "./final_count_taxonomy_fasta_files/ITS_tax_table.txt"
+                },
+                {
                     "@id": "./final_count_taxonomy_fasta_files/COI_ASV_table.txt"
                 },
                 {
-                    "@id": "./final_count_taxonomy_fasta_files/18S_OTUs.fa"
-                },
-                {
-                    "@id": "./final_count_taxonomy_fasta_files/18S_tax_table.txt"
+                    "@id": "./final_count_taxonomy_fasta_files/ITS_ASV_table.txt"
                 },
                 {
                     "@id": "./final_count_taxonomy_fasta_files/COI_ASVs.fa"
                 },
                 {
-                    "@id": "./final_count_taxonomy_fasta_files/ITS_ASVs.fa"
+                    "@id": "./final_count_taxonomy_fasta_files/18S_OTUs.fa"
                 },
                 {
                     "@id": "./final_count_taxonomy_fasta_files/COI_tax_table.txt"
                 },
                 {
-                    "@id": "./final_count_taxonomy_fasta_files/ITS_tax_table.txt"
-                },
-                {
                     "@id": "./final_count_taxonomy_fasta_files/18S_OTU_table.txt"
                 },
                 {
-                    "@id": "./final_count_taxonomy_fasta_files/ITS_ASV_table.txt"
-                }
-            ]
-        },
-        {
-            "@id": "./software_templates/",
-            "@type": "Dataset",
-            "label": "./software_templates/",
-            "hasPart": [
-                {
-                    "@id": "./software_templates/vliz-be-opsci_k-gap_languages.json"
+                    "@id": "./final_count_taxonomy_fasta_files/ITS_ASVs.fa"
                 },
                 {
-                    "@id": "./software_templates/vliz-be-opsci_k-gap_github.json"
-                },
-                {
-                    "@id": "./software_templates/test_codemeta.jsonld"
-                },
-                {
-                    "@id": "./software_templates/codemeta.json.ldt.j2"
-                },
-                {
-                    "@id": "./software_templates/vliz-be-opsci_k-gap_contributors.json"
-                },
-                {
-                    "@id": "./software_templates/codemeta.json"
-                },
-                {
-                    "@id": "./software_templates/vliz-be-opsci_k-gap_requirements.json"
-                },
-                {
-                    "@id": "./software_templates/github_repo.ttl.ldt.j2"
-                },
-                {
-                    "@id": "./software_templates/get_github_info.py"
+                    "@id": "./final_count_taxonomy_fasta_files/18S_tax_table.txt"
                 }
             ]
         },
@@ -88,43 +54,40 @@
                     "@id": "./final_count_taxonomy_fasta_files/"
                 },
                 {
-                    "@id": "./software_templates/"
-                },
-                {
-                    "@id": "./18S_merge_tables_first_step_for_data_paper.R"
-                },
-                {
-                    "@id": "./WormsAttributes4ARMSdata_4release001.py"
-                },
-                {
-                    "@id": "./SpeciesListAttributes18S.csv"
+                    "@id": "./FixPEMAtaxassigments_COI_taxonomist.py"
                 },
                 {
                     "@id": "./gene_analysis.R"
                 },
                 {
-                    "@id": "./sample_data.txt"
-                },
-                {
-                    "@id": "./palette.txt"
-                },
-                {
-                    "@id": "./FixPEMAtaxassigments_18S_taxonomist.py"
-                },
-                {
-                    "@id": "./COI_merge_tables_first_step_for_data_paper.R"
+                    "@id": "./SpeciesListAttributes18S.csv"
                 },
                 {
                     "@id": "./ITS_merge_tables_first_step_for_data_paper.R"
                 },
                 {
-                    "@id": "./FixPEMAtaxassigments_COI_taxonomist.py"
+                    "@id": "./18S_merge_tables_first_step_for_data_paper.R"
+                },
+                {
+                    "@id": "./sample_data.txt"
+                },
+                {
+                    "@id": "./FixPEMAtaxassigments_18S_taxonomist.py"
+                },
+                {
+                    "@id": "./SpeciesListAttributesCOI.csv"
+                },
+                {
+                    "@id": "./palette.txt"
                 },
                 {
                     "@id": "./codemeta.json"
                 },
                 {
-                    "@id": "./SpeciesListAttributesCOI.csv"
+                    "@id": "./COI_merge_tables_first_step_for_data_paper.R"
+                },
+                {
+                    "@id": "./WormsAttributes4ARMSdata_4release001.py"
                 },
                 {
                     "@id": "./WormsAttributes4ARMSdata.py"
@@ -1750,44 +1713,14 @@
             "programmingLanguage": "R"
         },
         {
-            "@id": "./final_count_taxonomy_fasta_files/COI_ASV_table.txt",
-            "@type": "File",
-            "label": "./final_count_taxonomy_fasta_files/COI_ASV_table.txt"
-        },
-        {
-            "@id": "./final_count_taxonomy_fasta_files/18S_OTUs.fa",
-            "@type": "File",
-            "label": "./final_count_taxonomy_fasta_files/18S_OTUs.fa"
-        },
-        {
-            "@id": "./final_count_taxonomy_fasta_files/18S_tax_table.txt",
-            "@type": "File",
-            "label": "./final_count_taxonomy_fasta_files/18S_tax_table.txt"
-        },
-        {
-            "@id": "./final_count_taxonomy_fasta_files/COI_ASVs.fa",
-            "@type": "File",
-            "label": "./final_count_taxonomy_fasta_files/COI_ASVs.fa"
-        },
-        {
-            "@id": "./final_count_taxonomy_fasta_files/ITS_ASVs.fa",
-            "@type": "File",
-            "label": "./final_count_taxonomy_fasta_files/ITS_ASVs.fa"
-        },
-        {
-            "@id": "./final_count_taxonomy_fasta_files/COI_tax_table.txt",
-            "@type": "File",
-            "label": "./final_count_taxonomy_fasta_files/COI_tax_table.txt"
-        },
-        {
             "@id": "./final_count_taxonomy_fasta_files/ITS_tax_table.txt",
             "@type": "File",
             "label": "./final_count_taxonomy_fasta_files/ITS_tax_table.txt"
         },
         {
-            "@id": "./final_count_taxonomy_fasta_files/18S_OTU_table.txt",
+            "@id": "./final_count_taxonomy_fasta_files/COI_ASV_table.txt",
             "@type": "File",
-            "label": "./final_count_taxonomy_fasta_files/18S_OTU_table.txt"
+            "label": "./final_count_taxonomy_fasta_files/COI_ASV_table.txt"
         },
         {
             "@id": "./final_count_taxonomy_fasta_files/ITS_ASV_table.txt",
@@ -1795,59 +1728,44 @@
             "label": "./final_count_taxonomy_fasta_files/ITS_ASV_table.txt"
         },
         {
-            "@id": "./software_templates/vliz-be-opsci_k-gap_languages.json",
+            "@id": "./final_count_taxonomy_fasta_files/COI_ASVs.fa",
             "@type": "File",
-            "label": "./software_templates/vliz-be-opsci_k-gap_languages.json"
+            "label": "./final_count_taxonomy_fasta_files/COI_ASVs.fa"
         },
         {
-            "@id": "./software_templates/vliz-be-opsci_k-gap_github.json",
+            "@id": "./final_count_taxonomy_fasta_files/18S_OTUs.fa",
             "@type": "File",
-            "label": "./software_templates/vliz-be-opsci_k-gap_github.json"
+            "label": "./final_count_taxonomy_fasta_files/18S_OTUs.fa"
         },
         {
-            "@id": "./software_templates/test_codemeta.jsonld",
+            "@id": "./final_count_taxonomy_fasta_files/COI_tax_table.txt",
             "@type": "File",
-            "label": "./software_templates/test_codemeta.jsonld"
+            "label": "./final_count_taxonomy_fasta_files/COI_tax_table.txt"
         },
         {
-            "@id": "./software_templates/codemeta.json.ldt.j2",
+            "@id": "./final_count_taxonomy_fasta_files/18S_OTU_table.txt",
             "@type": "File",
-            "label": "./software_templates/codemeta.json.ldt.j2"
+            "label": "./final_count_taxonomy_fasta_files/18S_OTU_table.txt"
         },
         {
-            "@id": "./software_templates/vliz-be-opsci_k-gap_contributors.json",
+            "@id": "./final_count_taxonomy_fasta_files/ITS_ASVs.fa",
             "@type": "File",
-            "label": "./software_templates/vliz-be-opsci_k-gap_contributors.json"
+            "label": "./final_count_taxonomy_fasta_files/ITS_ASVs.fa"
         },
         {
-            "@id": "./software_templates/codemeta.json",
+            "@id": "./final_count_taxonomy_fasta_files/18S_tax_table.txt",
             "@type": "File",
-            "label": "./software_templates/codemeta.json"
+            "label": "./final_count_taxonomy_fasta_files/18S_tax_table.txt"
         },
         {
-            "@id": "./software_templates/vliz-be-opsci_k-gap_requirements.json",
+            "@id": "./FixPEMAtaxassigments_COI_taxonomist.py",
             "@type": "File",
-            "label": "./software_templates/vliz-be-opsci_k-gap_requirements.json"
+            "label": "./FixPEMAtaxassigments_COI_taxonomist.py"
         },
         {
-            "@id": "./software_templates/github_repo.ttl.ldt.j2",
+            "@id": "./gene_analysis.R",
             "@type": "File",
-            "label": "./software_templates/github_repo.ttl.ldt.j2"
-        },
-        {
-            "@id": "./software_templates/get_github_info.py",
-            "@type": "File",
-            "label": "./software_templates/get_github_info.py"
-        },
-        {
-            "@id": "./18S_merge_tables_first_step_for_data_paper.R",
-            "@type": "File",
-            "label": "./18S_merge_tables_first_step_for_data_paper.R"
-        },
-        {
-            "@id": "./WormsAttributes4ARMSdata_4release001.py",
-            "@type": "File",
-            "label": "./WormsAttributes4ARMSdata_4release001.py"
+            "label": "./gene_analysis.R"
         },
         {
             "@id": "./SpeciesListAttributes18S.csv",
@@ -1862,9 +1780,14 @@
             "fileFormat": "csv"
         },
         {
-            "@id": "./gene_analysis.R",
+            "@id": "./ITS_merge_tables_first_step_for_data_paper.R",
             "@type": "File",
-            "label": "./gene_analysis.R"
+            "label": "./ITS_merge_tables_first_step_for_data_paper.R"
+        },
+        {
+            "@id": "./18S_merge_tables_first_step_for_data_paper.R",
+            "@type": "File",
+            "label": "./18S_merge_tables_first_step_for_data_paper.R"
         },
         {
             "@id": "./sample_data.txt",
@@ -1879,34 +1802,9 @@
             "dct:relation": "https://github.com/arms-mbon/code_release_001/blob/main/gene_analysis.R"
         },
         {
-            "@id": "./palette.txt",
-            "@type": "File",
-            "label": "./palette.txt"
-        },
-        {
             "@id": "./FixPEMAtaxassigments_18S_taxonomist.py",
             "@type": "File",
             "label": "./FixPEMAtaxassigments_18S_taxonomist.py"
-        },
-        {
-            "@id": "./COI_merge_tables_first_step_for_data_paper.R",
-            "@type": "File",
-            "label": "./COI_merge_tables_first_step_for_data_paper.R"
-        },
-        {
-            "@id": "./ITS_merge_tables_first_step_for_data_paper.R",
-            "@type": "File",
-            "label": "./ITS_merge_tables_first_step_for_data_paper.R"
-        },
-        {
-            "@id": "./FixPEMAtaxassigments_COI_taxonomist.py",
-            "@type": "File",
-            "label": "./FixPEMAtaxassigments_COI_taxonomist.py"
-        },
-        {
-            "@id": "./codemeta.json",
-            "@type": "File",
-            "label": "./codemeta.json"
         },
         {
             "@id": "./SpeciesListAttributesCOI.csv",
@@ -1919,6 +1817,26 @@
             },
             "wasDerivedFrom": "https://github.com/arms-mbon/code_release_001/blob/main/WormsAttributes4ARMSdata_4release001.py",
             "fileFormat": "csv"
+        },
+        {
+            "@id": "./palette.txt",
+            "@type": "File",
+            "label": "./palette.txt"
+        },
+        {
+            "@id": "./codemeta.json",
+            "@type": "File",
+            "label": "./codemeta.json"
+        },
+        {
+            "@id": "./COI_merge_tables_first_step_for_data_paper.R",
+            "@type": "File",
+            "label": "./COI_merge_tables_first_step_for_data_paper.R"
+        },
+        {
+            "@id": "./WormsAttributes4ARMSdata_4release001.py",
+            "@type": "File",
+            "label": "./WormsAttributes4ARMSdata_4release001.py"
         },
         {
             "@id": "./WormsAttributes4ARMSdata.py",
