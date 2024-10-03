@@ -205,7 +205,10 @@
       "name": "copy"
     }
   },
-  "isPartOf": "{link of other things this repository is part of (e.g. GitHub repo, workflows, datasets, ...}",
-  "keywords": [ "Ecological value assessment", "biodiversity or https://aims.fao.org/aos/agrovoc/c_33949.html" ],
+  "isPartOf": [
+      "https://github.com/arms-mbon/analysis_release_001",
+      "https://github.com/arms-mbon/code_release_001"
+  ],
+  "keywords": [ "Ecological value assessment", "https://aims.fao.org/aos/agrovoc/c_33949.html" ],
   "readme": "https://github.com/lifewatch/eva/blob/main/Readme.md"
 }
