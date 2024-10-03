@@ -63,8 +63,7 @@
     {
       "@type": "Organization",
       "url": "https://marcobolo-project.eu/",
-      "name": "MARCO BOLO",
-      "GRANTXXXXXXX???":  ??????????????????
+      "name": "MARCO BOLO"
     }
   ],
   "maintainer": [
@@ -80,7 +79,7 @@
       "givenName": "Nauras",
       "familyName": "Daraghmeh",
       "email": "naurasd@googlemail.com",
-      "@id": "https://orcid.org/0000-0001-82
+      "@id": "https://orcid.org/0000-0001-82"
     }
   ],
   "softwareRequirements": {
