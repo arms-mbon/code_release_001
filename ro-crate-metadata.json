@@ -17,31 +17,31 @@
             "label": "./final_count_taxonomy_fasta_files/",
             "hasPart": [
                 {
-                    "@id": "./final_count_taxonomy_fasta_files/18S_OTU_table.txt"
-                },
-                {
-                    "@id": "./final_count_taxonomy_fasta_files/ITS_ASV_table.txt"
-                },
-                {
-                    "@id": "./final_count_taxonomy_fasta_files/18S_OTUs.fa"
-                },
-                {
-                    "@id": "./final_count_taxonomy_fasta_files/COI_ASV_table.txt"
-                },
-                {
                     "@id": "./final_count_taxonomy_fasta_files/18S_tax_table.txt"
                 },
                 {
-                    "@id": "./final_count_taxonomy_fasta_files/ITS_tax_table.txt"
+                    "@id": "./final_count_taxonomy_fasta_files/18S_OTU_table.txt"
                 },
                 {
                     "@id": "./final_count_taxonomy_fasta_files/COI_ASVs.fa"
                 },
                 {
+                    "@id": "./final_count_taxonomy_fasta_files/COI_tax_table.txt"
+                },
+                {
+                    "@id": "./final_count_taxonomy_fasta_files/COI_ASV_table.txt"
+                },
+                {
+                    "@id": "./final_count_taxonomy_fasta_files/ITS_tax_table.txt"
+                },
+                {
+                    "@id": "./final_count_taxonomy_fasta_files/ITS_ASV_table.txt"
+                },
+                {
                     "@id": "./final_count_taxonomy_fasta_files/ITS_ASVs.fa"
                 },
                 {
-                    "@id": "./final_count_taxonomy_fasta_files/COI_tax_table.txt"
+                    "@id": "./final_count_taxonomy_fasta_files/18S_OTUs.fa"
                 }
             ]
         },
@@ -57,6 +57,9 @@
                     "@id": "./SpeciesListAttributes18S.csv"
                 },
                 {
+                    "@id": "./codemeta.json"
+                },
+                {
                     "@id": "./gene_analysis.R"
                 },
                 {
@@ -66,13 +69,19 @@
                     "@id": "./WormsAttributes4ARMSdata_4release001.py"
                 },
                 {
-                    "@id": "./SpeciesListAttributesCOI.csv"
+                    "@id": "./FixPEMAtaxassigments_COI_taxonomist.py"
                 },
                 {
-                    "@id": "./COI_merge_tables_first_step_for_data_paper.R"
+                    "@id": "./sample_data.txt"
+                },
+                {
+                    "@id": "./FixPEMAtaxassigments_18S_taxonomist.py"
                 },
                 {
                     "@id": "./ITS_merge_tables_first_step_for_data_paper.R"
+                },
+                {
+                    "@id": "./SpeciesListAttributesCOI.csv"
                 },
                 {
                     "@id": "./palette.txt"
@@ -81,16 +90,7 @@
                     "@id": "./WormsAttributes4ARMSdata.py"
                 },
                 {
-                    "@id": "./codemeta.json"
-                },
-                {
-                    "@id": "./FixPEMAtaxassigments_COI_taxonomist.py"
-                },
-                {
-                    "@id": "./sample_data.txt"
-                },
-                {
-                    "@id": "./FixPEMAtaxassigments_18S_taxonomist.py"
+                    "@id": "./COI_merge_tables_first_step_for_data_paper.R"
                 }
             ]
         },
@@ -1713,34 +1713,14 @@
             "programmingLanguage": "R"
         },
         {
-            "@id": "./final_count_taxonomy_fasta_files/18S_OTU_table.txt",
-            "@type": "File",
-            "label": "./final_count_taxonomy_fasta_files/18S_OTU_table.txt"
-        },
-        {
-            "@id": "./final_count_taxonomy_fasta_files/ITS_ASV_table.txt",
-            "@type": "File",
-            "label": "./final_count_taxonomy_fasta_files/ITS_ASV_table.txt"
-        },
-        {
-            "@id": "./final_count_taxonomy_fasta_files/18S_OTUs.fa",
-            "@type": "File",
-            "label": "./final_count_taxonomy_fasta_files/18S_OTUs.fa"
-        },
-        {
-            "@id": "./final_count_taxonomy_fasta_files/COI_ASV_table.txt",
-            "@type": "File",
-            "label": "./final_count_taxonomy_fasta_files/COI_ASV_table.txt"
-        },
-        {
             "@id": "./final_count_taxonomy_fasta_files/18S_tax_table.txt",
             "@type": "File",
             "label": "./final_count_taxonomy_fasta_files/18S_tax_table.txt"
         },
         {
-            "@id": "./final_count_taxonomy_fasta_files/ITS_tax_table.txt",
+            "@id": "./final_count_taxonomy_fasta_files/18S_OTU_table.txt",
             "@type": "File",
-            "label": "./final_count_taxonomy_fasta_files/ITS_tax_table.txt"
+            "label": "./final_count_taxonomy_fasta_files/18S_OTU_table.txt"
         },
         {
             "@id": "./final_count_taxonomy_fasta_files/COI_ASVs.fa",
@@ -1748,14 +1728,34 @@
             "label": "./final_count_taxonomy_fasta_files/COI_ASVs.fa"
         },
         {
+            "@id": "./final_count_taxonomy_fasta_files/COI_tax_table.txt",
+            "@type": "File",
+            "label": "./final_count_taxonomy_fasta_files/COI_tax_table.txt"
+        },
+        {
+            "@id": "./final_count_taxonomy_fasta_files/COI_ASV_table.txt",
+            "@type": "File",
+            "label": "./final_count_taxonomy_fasta_files/COI_ASV_table.txt"
+        },
+        {
+            "@id": "./final_count_taxonomy_fasta_files/ITS_tax_table.txt",
+            "@type": "File",
+            "label": "./final_count_taxonomy_fasta_files/ITS_tax_table.txt"
+        },
+        {
+            "@id": "./final_count_taxonomy_fasta_files/ITS_ASV_table.txt",
+            "@type": "File",
+            "label": "./final_count_taxonomy_fasta_files/ITS_ASV_table.txt"
+        },
+        {
             "@id": "./final_count_taxonomy_fasta_files/ITS_ASVs.fa",
             "@type": "File",
             "label": "./final_count_taxonomy_fasta_files/ITS_ASVs.fa"
         },
         {
-            "@id": "./final_count_taxonomy_fasta_files/COI_tax_table.txt",
+            "@id": "./final_count_taxonomy_fasta_files/18S_OTUs.fa",
             "@type": "File",
-            "label": "./final_count_taxonomy_fasta_files/COI_tax_table.txt"
+            "label": "./final_count_taxonomy_fasta_files/18S_OTUs.fa"
         },
         {
             "@id": "./SpeciesListAttributes18S.csv",
@@ -1768,6 +1768,11 @@
             },
             "wasDerivedFrom": "https://github.com/arms-mbon/code_release_001/blob/main/WormsAttributes4ARMSdata_4release001.py",
             "fileFormat": "csv"
+        },
+        {
+            "@id": "./codemeta.json",
+            "@type": "File",
+            "label": "./codemeta.json"
         },
         {
             "@id": "./gene_analysis.R",
@@ -1783,43 +1788,6 @@
             "@id": "./WormsAttributes4ARMSdata_4release001.py",
             "@type": "File",
             "label": "./WormsAttributes4ARMSdata_4release001.py"
-        },
-        {
-            "@id": "./SpeciesListAttributesCOI.csv",
-            "@type": "File",
-            "label": "./SpeciesListAttributesCOI.csv",
-            "description": "Output from WormsAttributes4ARMSdata_4release001.py for COI",
-            "downloadURL": "https://data.arms-mbon.org/code_release_001/latest/#./SpeciesListAttributesCOI.csv",
-            "creator": {
-                "@id": "_:KatrinaExter"
-            },
-            "wasDerivedFrom": "https://github.com/arms-mbon/code_release_001/blob/main/WormsAttributes4ARMSdata_4release001.py",
-            "fileFormat": "csv"
-        },
-        {
-            "@id": "./COI_merge_tables_first_step_for_data_paper.R",
-            "@type": "File",
-            "label": "./COI_merge_tables_first_step_for_data_paper.R"
-        },
-        {
-            "@id": "./ITS_merge_tables_first_step_for_data_paper.R",
-            "@type": "File",
-            "label": "./ITS_merge_tables_first_step_for_data_paper.R"
-        },
-        {
-            "@id": "./palette.txt",
-            "@type": "File",
-            "label": "./palette.txt"
-        },
-        {
-            "@id": "./WormsAttributes4ARMSdata.py",
-            "@type": "File",
-            "label": "./WormsAttributes4ARMSdata.py"
-        },
-        {
-            "@id": "./codemeta.json",
-            "@type": "File",
-            "label": "./codemeta.json"
         },
         {
             "@id": "./FixPEMAtaxassigments_COI_taxonomist.py",
@@ -1842,6 +1810,38 @@
             "@id": "./FixPEMAtaxassigments_18S_taxonomist.py",
             "@type": "File",
             "label": "./FixPEMAtaxassigments_18S_taxonomist.py"
+        },
+        {
+            "@id": "./ITS_merge_tables_first_step_for_data_paper.R",
+            "@type": "File",
+            "label": "./ITS_merge_tables_first_step_for_data_paper.R"
+        },
+        {
+            "@id": "./SpeciesListAttributesCOI.csv",
+            "@type": "File",
+            "label": "./SpeciesListAttributesCOI.csv",
+            "description": "Output from WormsAttributes4ARMSdata_4release001.py for COI",
+            "downloadURL": "https://data.arms-mbon.org/code_release_001/latest/#./SpeciesListAttributesCOI.csv",
+            "creator": {
+                "@id": "_:KatrinaExter"
+            },
+            "wasDerivedFrom": "https://github.com/arms-mbon/code_release_001/blob/main/WormsAttributes4ARMSdata_4release001.py",
+            "fileFormat": "csv"
+        },
+        {
+            "@id": "./palette.txt",
+            "@type": "File",
+            "label": "./palette.txt"
+        },
+        {
+            "@id": "./WormsAttributes4ARMSdata.py",
+            "@type": "File",
+            "label": "./WormsAttributes4ARMSdata.py"
+        },
+        {
+            "@id": "./COI_merge_tables_first_step_for_data_paper.R",
+            "@type": "File",
+            "label": "./COI_merge_tables_first_step_for_data_paper.R"
         }
     ]
 }
