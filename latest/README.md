@@ -1,6 +1,6 @@
 # code_release_001
 
-Here you will find all code that was used for the analysis presented in ARMS-MBON's first data paper. Note that this is not the code used to create files for EurOBIS submissions, but the code used for the exploration of the sequencing data of data_release_001.
+Here you will find all code that was used for the analysis presented in ARMS-MBON's first data paper. Note that this is not the code used to create files for (Eur)OBIS data submissions, but the code used for the exploration of the sequencing data (see [data_release_001](https://github.com/arms-mbon/data_release_001) for the related occurrence and event data and [analysis_release_001](https://github.com/arms-mbon/analysis_release_001) for the bioinformatics data).
 
 ## Curating taxonomy and adding NCBI IDs ##
 *  [FixPEMAtaxassigments_18S_taxonomist.py](https://github.com/arms-mbon/code_release_001/blob/main/FixPEMAtaxassigments_18S_taxonomist.py) to curate the 18S taxonomic outputs (see [the repo processing_batch1/updated_taxonomic_assignments](https://github.com/arms-mbon/data_workspace/tree/main/analysis_data/from_pema/processing_batch1/updated_taxonomic_assignments) for more detail) and get the NBCI IDs for the scientific names. 
