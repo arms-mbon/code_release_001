@@ -1767,7 +1767,7 @@
                 "@id": "_:KatrinaExter"
             },
             "wasDerivedFrom": "https://github.com/arms-mbon/code_release_001/blob/main/WormsAttributes4ARMSdata_4release001.py",
-            "fileFormat": "csv"
+            "encodingFormat": "csv"
         },
         {
             "@id": "./codemeta.json",
@@ -1803,7 +1803,7 @@
             "creator": {
                 "@id": "_:NaurasDaraghmeh"
             },
-            "fileFormat": "Text",
+            "encodingFormat": "Text",
             "dct:relation": "https://github.com/arms-mbon/code_release_001/blob/main/gene_analysis.R"
         },
         {
@@ -1826,7 +1826,7 @@
                 "@id": "_:KatrinaExter"
             },
             "wasDerivedFrom": "https://github.com/arms-mbon/code_release_001/blob/main/WormsAttributes4ARMSdata_4release001.py",
-            "fileFormat": "csv"
+            "encodingFormat": "csv"
         },
         {
             "@id": "./palette.txt",

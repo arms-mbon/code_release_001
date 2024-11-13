@@ -16,7 +16,7 @@
     "publisher": { "@id": "_:VLIZ" },
     "ContactPoint": [
       "opsci@vliz.be",
-      { "@id": "_:MatthiasObst" },
+      { "@id": "_:MatthiasObst" }
     ],
     "description": "All the code and selected outputs that were used/generated in the analysis of the ARMS-MBON species results for the first data release.",
     "dct:relation": [ "https://github.com/arms-mbon/analysis_release_001", "https://github.com/arms-mbon/data_release_001" ],
@@ -93,7 +93,7 @@
     "downloadURL": "https://data.arms-mbon.org/code_release_001/latest/#./SpeciesListAttributes18S.csv",
     "creator": { "@id": "_:KatrinaExter" },
     "wasDerivedFrom": "https://github.com/arms-mbon/code_release_001/blob/main/WormsAttributes4ARMSdata_4release001.py",
-    "fileFormat": "csv",
+    "encodingFormat": "csv",
     "@type": "File"
   },
   "./SpeciesListAttributesCOI.csv": {
@@ -101,14 +101,14 @@
     "downloadURL": "https://data.arms-mbon.org/code_release_001/latest/#./SpeciesListAttributesCOI.csv",
     "creator": { "@id": "_:KatrinaExter" },
     "wasDerivedFrom": "https://github.com/arms-mbon/code_release_001/blob/main/WormsAttributes4ARMSdata_4release001.py",
-    "fileFormat": "csv",
+    "encodingFormat": "csv",
     "@type": "File"
   },
   "./sample_data.txt": {
     "description": "Input file for the gene analysis",
     "downloadURL": "https://data.arms-mbon.org/code_release_001/latest/#./sample_data.txt",
     "creator": { "@id": "_:NaurasDaraghmeh" },
-    "fileFormat": "Text",
+    "encodingFormat": "Text",
     "dct:relation": "https://github.com/arms-mbon/code_release_001/blob/main/gene_analysis.R",
     "@type": "File"
   },
@@ -116,7 +116,7 @@
     "description": "Output of the so-called IJI WRIMS checker: checking for non-native/invasive status of species using the WoRMS APIs",
     "downloadURL": "https://data.arms-mbon.org/code_release_001/latest/#./ARMS_SpeciesPerObservatory_wrims.xlsx",
     "creator": { "@id": "_:NaurasDaraghmeh" },
-    "fileFormat": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
+    "encodingFormat": "application/vnd.openxmlformats-officedocument.spreadsheetml.sheet",
     "wasDerivedFrom": "https://github.com/vliz-be-opsci/lw-iji-invasive-checker",
     "@type": "File"
   },
