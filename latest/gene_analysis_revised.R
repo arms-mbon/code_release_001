@@ -16,9 +16,7 @@ library(gamm4)
 library(lme4)
 library(lmerTest) # needs to be loaded after lme4 to be able to print p-values in model summary later on
 
-setwd("C:/Users/Nauras/OneDrive - University of Gothenburg/ARMS MBON/data paper/ARMS_data_paper_Nauras/Analysis/Nauras")
-setwd("C:/Users/xdnaur/OneDrive - University of Gothenburg/ARMS MBON/data paper/ARMS_data_paper_Nauras/Revision_01")
-setwd("C:/Users/xdnaur/OneDrive - University of Gothenburg/ARMS MBON/data paper/ARMS_data_paper_Nauras/Analysis/Nauras")
+setwd("~/ARMS_data_paper_Nauras/Analysis")
 
 ### Create phyloseq objects, do first quick data assessments and get info on recovered phyla species-level assignments ###
 
