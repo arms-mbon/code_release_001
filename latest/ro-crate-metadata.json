@@ -43,7 +43,13 @@
                 {
                     "@id": "./final_count_taxonomy_fasta_files/18S_OTUs.fa"
                 }
-            ]
+            ],
+            "description": "The output of the R scripts to merge the relevant data from the individual PEMA runs. Final ASV/OTU count tables, taxonomy tables, and fasta files for each marker gene ",
+            "downloadURL": "https://data.arms-mbon.org/code_release_001/latest/#./final_count_taxonomy_fasta_files/",
+            "creator": {
+                "id": "_:NaurasDaraghmeh"
+            },
+            "dct:relation": "https://github.com/arms-mbon/code_release_001/blob/main/gene_analysis.R"
         },
         {
             "@id": "./",
@@ -91,6 +97,79 @@
                 },
                 {
                     "@id": "./COI_merge_tables_first_step_for_data_paper.R"
+                }
+            ],
+            "license": "https://creativecommons.org/public-domain/cc0/",
+            "title": "code_release_001",
+            "wasAssociatedWith": [
+                {
+                    "@id": "_:MatthiasObst"
+                },
+                {
+                    "@id": "_:KatrinaExter"
+                },
+                {
+                    "@id": "_:NaurasDaraghmeh"
+                }
+            ],
+            "creator": [
+                {
+                    "@id": "_:KatrinaExter"
+                },
+                {
+                    "@id": "_:NaurasDaraghmeh"
+                },
+                {
+                    "@id": "_:ARMSProject"
+                },
+                {
+                    "@id": "_:AssemblePlus"
+                }
+            ],
+            "publisher": {
+                "@id": "_:VLIZ"
+            },
+            "ContactPoint": [
+                "opsci@vliz.be",
+                {
+                    "@id": "_:MatthiasObst"
+                }
+            ],
+            "description": "All the code and selected outputs that were used/generated in the analysis of the ARMS-MBON species results for the first data release.",
+            "dct:relation": [
+                "https://github.com/arms-mbon/analysis_release_001",
+                "https://github.com/arms-mbon/data_release_001"
+            ],
+            "keywords": [
+                "sample",
+                "measurement",
+                "biodiversity",
+                "long-term-changes",
+                "marine-environment",
+                "genetics",
+                "benthic-communities"
+            ],
+            "dcat:theme": [
+                {
+                    "@id": "http://semanticscience.org/resource/SIO_001050"
+                },
+                {
+                    "@id": "http://purl.obolibrary.org/obo/ExO_0000067"
+                },
+                {
+                    "@id": "https://vocabularyserver.com/asfa/?tema=2185"
+                },
+                {
+                    "@id": "https://vocabularyserver.com/asfa/?tema=3505"
+                },
+                {
+                    "@id": "https://vocabularyserver.com/asfa/?tema=1150"
+                },
+                {
+                    "@id": "https://vocabularyserver.com/asfa/?tema=2365"
+                },
+                {
+                    "@id": "https://vocabularyserver.com/asfa/?tema=2091"
                 }
             ]
         },
@@ -1847,8 +1926,14 @@
         },
         {
             "@id": "./FixPEMAtaxassigments_18S_taxonomist.py",
-            "@type": "File",
-            "label": "./FixPEMAtaxassigments_18S_taxonomist.py"
+            "@type": "SoftwareSourceCode",
+            "label": "./FixPEMAtaxassigments_18S_taxonomist.py",
+            "descriptiion": "Code to curate the taxonomic assignments of the 18S PEMA OTU tables and add the NCBI IDs to the new scientific names",
+            "downloadURL": "https://data.arms-mbon.org/code_release_001/latest/#./FixPEMAtaxassigments_18S_taxonomist.py",
+            "creator": {
+                "@id": "_:KatrinaExter"
+            },
+            "programmingLanguage": "python"
         },
         {
             "@id": "./palette.txt",
@@ -1857,18 +1942,36 @@
         },
         {
             "@id": "./FixPEMAtaxassigments_COI_taxonomist.py",
-            "@type": "File",
-            "label": "./FixPEMAtaxassigments_COI_taxonomist.py"
+            "@type": "SoftwareSourceCode",
+            "label": "./FixPEMAtaxassigments_COI_taxonomist.py",
+            "descriptiion": "Code to take the species names from the taxonomic assignment files and add to the OTU tables; add the NCBI ID for the species name",
+            "downloadURL": "https://data.arms-mbon.org/code_release_001/latest/#./FixPEMAtaxassigments_COI_taxonomist.py",
+            "creator": {
+                "@id": "_:KatrinaExter"
+            },
+            "programmingLanguage": "python"
         },
         {
             "@id": "./WormsAttributes4ARMSdata.py",
-            "@type": "File",
-            "label": "./WormsAttributes4ARMSdata.py"
+            "@type": "SoftwareSourceCode",
+            "label": "./WormsAttributes4ARMSdata.py",
+            "description": "Code to extract certain attributes from WoRMS for a list of AphiaIDs",
+            "downloadURL": "https://data.arms-mbon.org/code_release_001/latest/#./WormsAttributes4ARMSdata.py",
+            "creator": {
+                "@id": "_:KatrinaExter"
+            },
+            "programmingLanguage": "python"
         },
         {
             "@id": "./WormsAttributes4ARMSdata_4release001.py",
-            "@type": "File",
-            "label": "./WormsAttributes4ARMSdata_4release001.py"
+            "@type": "SoftwareSourceCode",
+            "label": "./WormsAttributes4ARMSdata_4release001.py",
+            "description": "Code to extract certain attributes from WoRMS for a list of AphiaIDs, fine-tuned for use with these particular data",
+            "downloadURL": "https://data.arms-mbon.org/code_release_001/latest/#./WormsAttributes4ARMSdata_4release001.py",
+            "creator": {
+                "@id": "_:KatrinaExter"
+            },
+            "programmingLanguage": "python"
         },
         {
             "@id": "./SpeciesListAttributes18S.csv",
@@ -1896,13 +1999,25 @@
         },
         {
             "@id": "./ITS_merge_tables_first_step_for_data_paper.R",
-            "@type": "File",
-            "label": "./ITS_merge_tables_first_step_for_data_paper.R"
+            "@type": "SoftwareSourceCode",
+            "label": "./ITS_merge_tables_first_step_for_data_paper.R",
+            "description": "Code to merge the ITS data (read count, taxonomy, and fasta files) from individual PEMA runs",
+            "downloadURL": "https://data.arms-mbon.org/code_release_001/latest/#./ITS_merge_tables_first_step_for_data_paper.R",
+            "creator": {
+                "@id": "_:NaurasDaraghmeh"
+            },
+            "programmingLanguage": "R"
         },
         {
             "@id": "./18S_merge_tables_first_step_for_data_paper.R",
-            "@type": "File",
-            "label": "./18S_merge_tables_first_step_for_data_paper.R"
+            "@type": "SoftwareSourceCode",
+            "label": "./18S_merge_tables_first_step_for_data_paper.R",
+            "description": "Code to merge the 18S data (read count, taxonomy, and fasta files) from individual PEMA runs",
+            "downloadURL": "https://data.arms-mbon.org/code_release_001/latest/#./18S_merge_tables_first_step_for_data_paper.R",
+            "creator": {
+                "@id": "_:NaurasDaraghmeh"
+            },
+            "programmingLanguage": "R"
         },
         {
             "@id": "./codemeta.json",
@@ -1916,8 +2031,14 @@
         },
         {
             "@id": "./gene_analysis.R",
-            "@type": "File",
-            "label": "./gene_analysis.R"
+            "@type": "SoftwareSourceCode",
+            "label": "./gene_analysis.R",
+            "description": "Code to explore the sequencing data output by the merging scripts",
+            "downloadURL": "https://data.arms-mbon.org/code_release_001/latest/#./gene_analysis.R",
+            "creator": {
+                "@id": "_:NaurasDaraghmeh"
+            },
+            "programmingLanguage": "R"
         },
         {
             "@id": "./sample_data.txt",
@@ -1933,8 +2054,14 @@
         },
         {
             "@id": "./COI_merge_tables_first_step_for_data_paper.R",
-            "@type": "File",
-            "label": "./COI_merge_tables_first_step_for_data_paper.R"
+            "@type": "SoftwareSourceCode",
+            "label": "./COI_merge_tables_first_step_for_data_paper.R",
+            "description": "Code to  merge the COI data (read count, taxonomy, and fasta files) from individual PEMA runs",
+            "downloadURL": "https://data.arms-mbon.org/code_release_001/latest/#./COI_merge_tables_first_step_for_data_paper.R",
+            "creator": {
+                "@id": "_:NaurasDaraghmeh"
+            },
+            "programmingLanguage": "R"
         }
     ]
 }

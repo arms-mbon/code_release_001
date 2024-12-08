@@ -12,8 +12,13 @@ library(xlsx)
 library(readxl)
 library(writexl)
 library(UpSetR)
+library(gamm4)
+library(lme4)
+library(lmerTest) # needs to be loaded after lme4 to be able to print p-values in model summary later on
 
-setwd("~/ARMS_data_paper_Nauras/Analysis")
+setwd("C:/Users/Nauras/OneDrive - University of Gothenburg/ARMS MBON/data paper/ARMS_data_paper_Nauras/Analysis/Nauras")
+setwd("C:/Users/xdnaur/OneDrive - University of Gothenburg/ARMS MBON/data paper/ARMS_data_paper_Nauras/Revision_01")
+setwd("C:/Users/xdnaur/OneDrive - University of Gothenburg/ARMS MBON/data paper/ARMS_data_paper_Nauras/Analysis/Nauras")
 
 ### Create phyloseq objects, do first quick data assessments and get info on recovered phyla species-level assignments ###
 
@@ -218,7 +223,8 @@ phylum_COI<-phylum_COI[order(phylum_COI$reads, decreasing = TRUE),]
 # get number and names of identified phyla
 phyla_identified_COI<-phylum_COI
 length(which(phyla_identified_COI$Phylum!="NA")) # Number of recovered phyla
-phyla_identified_COI[phyla_identified_COI$Phylum=="NA",] # Percentage of reads unclassified at phylum level
+phyla_identified_COI[phyla_identified_COI$Phylum=="NA",]
+# Percentage of reads unclassified at phylum level
 write.table(phyla_identified_COI,"phyla_identified_COI.txt",sep="\t",row.names = F,quote = F)
 
 phylum_COI$Phylum[12:nrow(phylum_COI)]<-"Other" # keep only top 10 most abundant phyla and NA and set rest to "Other"
@@ -1063,7 +1069,7 @@ length(unique(wrims$Species)) # Number of unique species
 all_list<-rbind(select(ambi_list,c(Species,Observatory,list)),select(wrims,c(Species,Observatory,list)),select(red_list,c(Species,Observatory,list)))
 
 all_list<-all_list %>% distinct()
-              
+  
 all_list<-all_list %>% group_by(list) %>% # First have to create a unique identifier row for each list type before using pivot_wider
                        mutate(row = row_number()) %>%
                        pivot_wider(names_from = list, values_from = Species) %>%
@@ -1149,7 +1155,7 @@ dev.off()
 
 ### Sequencing coverage/Deployment duration vs. ASV/OTU richness and number of identified species for COI and 18S per sample ###
 
-# COI data and plots
+# COI data
 
 # Format respective columns in sample_data as dates
 sample_data(psCOI)<-transform(sample_data(psCOI),Deployment = as.Date(as.character(Deployment), "%Y%m%d"))
@@ -1176,6 +1182,40 @@ read_sums_COI$species<-species_COI[order(match(rownames(species_COI),rownames(re
 
 read_sums_COI$Deployment_Days<-as.numeric(read_sums_COI$Deployment_Days)
 
+# COI statistics: 
+
+# Spearman Correlations
+cor.test(read_sums_COI$richness,read_sums_COI$reads,method = "spearman",exact=FALSE)
+cor.test(read_sums_COI$species,read_sums_COI$reads,method = "spearman",exact=FALSE)
+cor.test(read_sums_COI$richness,read_sums_COI$Deployment_Days,method = "spearman",exact=FALSE)
+cor.test(read_sums_COI$species,read_sums_COI$Deployment_Days,method = "spearman",exact=FALSE)
+
+# Simple Linear Regression for sequencing depth versus ASV and species richness 
+reads_richness_COI<-lm(richness~reads,read_sums_COI)
+summary(reads_richness_COI)
+reads_species_COI<-lm(species~reads,read_sums_COI)
+summary(reads_species_COI)
+
+# GAMM for deployment duration versus ASV and species richness 
+
+dat1<-groupedData(richness~Deployment_Days|Observatory,read_sums_COI) # creat groupedData object first
+gamm.mod1<-gamm4(richness~s(Deployment_Days),data=dat1,random=~(Deployment_Days|Observatory))
+summary(gamm.mod1$gam)
+summary(gamm.mod1$mer)
+# Add data from model to initial dataframe for plotting later on
+read_sums_COI$fixed1<-predict(gamm.mod1$gam) # only fixed effect because we will not plot random effects
+read_sums_COI$fixedse1<-predict(gamm.mod1$gam,se=T)$se
+
+dat2<-groupedData(species~Deployment_Days|Observatory,read_sums_COI) # creat groupedData object first
+gamm.mod2<-gamm4(species~s(Deployment_Days),data=dat2,random=~(Deployment_Days|Observatory))
+summary(gamm.mod2$gam)
+summary(gamm.mod2$mer)
+# Add data from model to initial dataframe for plotting later on
+read_sums_COI$fixed2<-predict(gamm.mod2$gam) # only fixed effect because we will not plot random effects
+read_sums_COI$fixedse2<-predict(gamm.mod2$gam,se=T)$se
+
+# COI plots
+
 scale1=0.036 # set scale for second axis
 
 graf_palettes$okabe_ito # get color codes of colorblind-friendly palette
@@ -1196,21 +1236,25 @@ read_plot_COI<-ggplot(read_sums_COI, aes(x=reads, y=richness)) +
         axis.line = element_line(colour = "black"),panel.border = element_blank())
 
 duration_plot_COI<-ggplot(read_sums_COI, aes(x=Deployment_Days, y=richness)) +
-  geom_point(aes(color="ASV/OTU richness")) +
-  geom_point(aes(y = species/scale1,color="Number of species"))+
-  geom_smooth(aes(Deployment_Days,richness,color="ASV/OTU richness",fill="ASV/OTU richness"),method=lm)+
-  geom_smooth(aes(Deployment_Days,species/scale1,color="Number of species",fill="Number of species"),method=lm)+
+  geom_point(aes(color="ASV/OTU richness"),show.legend = FALSE) +
+  geom_point(aes(y = species/scale1,color="Number of species"),show.legend = FALSE)+
+  geom_line(aes(x=Deployment_Days,y=fixed1),color="#E69F00",lwd=1)+ 
+  geom_line(aes(x=Deployment_Days,y=fixed2/scale1),color="#009E73",lwd=1)+ 
+  geom_ribbon(aes(x=Deployment_Days, ymax=fixed1+2*fixedse1, ymin=fixed1-2*fixedse1), fill="#E69F00", alpha=.5)+
+  geom_ribbon(aes(x=Deployment_Days, ymax=fixed2/scale1+2*fixedse2/scale1, ymin=fixed2/scale1-2*fixedse2/scale1), fill="#009E73", alpha=.5)+
+  #geom_smooth(aes(Deployment_Days,richness,color="ASV/OTU richness",fill="ASV/OTU richness"),method="gam",formula=y~s(x))+
+  #geom_smooth(aes(Deployment_Days,species/scale1,color="Number of species",fill="Number of species"),method="gam",formula=y~s(x))+
   scale_color_manual(name="Legend",breaks=c('ASV/OTU richness', 'Number of species'),values=c('ASV/OTU richness'="#E69F00", 'Number of species'="#009E73"))+
-  scale_fill_manual(name="Legend",breaks=c('ASV/OTU richness', 'Number of species'),values=c('ASV/OTU richness'="#E69F00", 'Number of species'="#009E73"))+
+  #scale_fill_manual(name="Legend",breaks=c('ASV/OTU richness', 'Number of species'),values=c('ASV/OTU richness'="#E69F00", 'Number of species'="#009E73"))+
   scale_y_continuous(limits=c(0,2500),breaks=c(0,500,1000,1500,2000,2500),labels = scales::comma,sec.axis = sec_axis(~.*scale1, name="Number of species",breaks=c(0,30,60,90)))+
   scale_x_continuous(limits=c(30,NA),breaks=c(30,230,430,630))+
   labs(x="Deployment duration (days)",y="ASV richness")+
   theme_bw()+
   ggtitle("        COI\nA")+
-  theme(legend.title = element_blank(),plot.title = element_text(size = 20,face = "bold",vjust=-.2),axis.text.y=element_text(color="black"),axis.text.x=element_text(color="black",angle=45,hjust=1),axis.text=element_text(size=10),axis.title=element_text(size=12),legend.text=element_text(size=12),panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+  theme(legend.position = "none",plot.title = element_text(size = 20,face = "bold",vjust=-.2),axis.text.y=element_text(color="black"),axis.text.x=element_text(color="black",angle=45,hjust=1),axis.text=element_text(size=10),axis.title=element_text(size=12),legend.text=element_text(size=12),panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
         axis.line = element_line(colour = "black"),panel.border = element_blank())
 
-# 18S data and plots
+# 18S data
 
 # Format respective columns in sample_data as dates
 sample_data(ps18S)<-transform(sample_data(ps18S),Deployment = as.Date(as.character(Deployment), "%Y%m%d"))
@@ -1237,6 +1281,40 @@ read_sums_18S$species<-species_18S[order(match(rownames(species_18S),rownames(re
 
 read_sums_18S$Deployment_Days<-as.numeric(read_sums_18S$Deployment_Days)
 
+# 18S statistics: 
+
+# Spearman Correlations
+cor.test(read_sums_18S$richness,read_sums_18S$reads,method = "spearman",exact=FALSE)
+cor.test(read_sums_18S$species,read_sums_18S$reads,method = "spearman",exact=FALSE)
+cor.test(read_sums_18S$richness,read_sums_18S$Deployment_Days,method = "spearman",exact=FALSE)
+cor.test(read_sums_18S$species,read_sums_18S$Deployment_Days,method = "spearman",exact=FALSE)
+
+# Simple Linear Regression for sequencing depth versus ASV and species richness 
+reads_richness_18S<-lm(richness~reads,read_sums_18S)
+summary(reads_richness_18S)
+reads_species_18S<-lm(species~reads,read_sums_18S)
+summary(reads_species_18S)
+
+# GAMM for deployment duration versus ASV and species richness 
+
+dat3<-groupedData(richness~Deployment_Days|Observatory,read_sums_18S) # creat groupedData object first
+gamm.mod3<-gamm4(richness~s(Deployment_Days),data=dat3,random=~(Deployment_Days|Observatory))
+summary(gamm.mod3$gam)
+summary(gamm.mod3$mer)
+# Add data from model to initial dataframe for plotting later on
+read_sums_18S$fixed1<-predict(gamm.mod3$gam) # only fixed effect because we will not plot random effects
+read_sums_18S$fixedse1<-predict(gamm.mod3$gam,se=T)$se
+
+dat4<-groupedData(species~Deployment_Days|Observatory,read_sums_18S) # creat groupedData object first
+gamm.mod4<-gamm4(species~s(Deployment_Days),data=dat4,random=~(Deployment_Days|Observatory))
+summary(gamm.mod4$gam)
+summary(gamm.mod4$mer)
+# Add data from model to initial dataframe for plotting later on
+read_sums_18S$fixed2<-predict(gamm.mod4$gam) # only fixed effect because we will not plot random effects
+read_sums_18S$fixedse2<-predict(gamm.mod4$gam,se=T)$se
+
+# 18S plots
+
 scale2=(40/900) # set scale for second axis
 
 graf_palettes$okabe_ito # get color codes of colorblind-friendly palette
@@ -1257,56 +1335,30 @@ read_plot_18S<-ggplot(read_sums_18S, aes(x=reads, y=richness)) +
        axis.line = element_line(colour = "black"),panel.border = element_blank())
 
 duration_plot_18S<-ggplot(read_sums_18S, aes(x=Deployment_Days, y=richness)) +
-  geom_point(aes(color="OTU richness")) +
-  geom_point(aes(y = species/scale2,color="Number of species"))+
-  geom_smooth(aes(Deployment_Days,richness,color="OTU richness",fill="OTU richness"),method=lm)+
-  geom_smooth(aes(Deployment_Days,species/scale2,color="Number of species",fill="Number of species"),method=lm)+
-  scale_color_manual(name="Legend",breaks=c('OTU richness', 'Number of species'),values=c('OTU richness'="#E69F00", 'Number of species'="#009E73"))+
-  scale_fill_manual(name="Legend",breaks=c('OTU richness', 'Number of species'),values=c('OTU richness'="#E69F00", 'Number of species'="#009E73"))+
+  geom_point(aes(color="ASV/OTU richness"),show.legend = FALSE) +
+  geom_point(aes(y = species/scale1,color="Number of species"),show.legend = FALSE)+
+  geom_line(aes(x=Deployment_Days,y=fixed1),color="#E69F00",lwd=1)+ 
+  geom_line(aes(x=Deployment_Days,y=fixed2/scale2),color="#009E73",lwd=1)+ 
+  geom_ribbon(aes(x=Deployment_Days, ymax=fixed1+2*fixedse1, ymin=fixed1-2*fixedse1), fill="#E69F00", alpha=.5)+
+  geom_ribbon(aes(x=Deployment_Days, ymax=fixed2/scale2+2*fixedse2/scale2, ymin=fixed2/scale2-2*fixedse2/scale2), fill="#009E73", alpha=.5)+
+  #geom_smooth(aes(Deployment_Days,richness,color="ASV/OTU richness",fill="ASV/OTU richness"),method=lm)+
+  #geom_smooth(aes(Deployment_Days,species/scale1,color="Number of species",fill="Number of species"),method=lm)+
+  scale_color_manual(name="Legend",breaks=c('ASV/OTU richness', 'Number of species'),values=c('ASV/OTU richness'="#E69F00", 'Number of species'="#009E73"))+
+  #scale_fill_manual(name="Legend",breaks=c('ASV/OTU richness', 'Number of species'),values=c('ASV/OTU richness'="#E69F00", 'Number of species'="#009E73"))+
   scale_x_continuous(limits=c(30,NA),breaks = c(30,230,430,630))+
   scale_y_continuous(limits=c(0,900),breaks=c(0,300,600,900),labels = scales::comma,sec.axis = sec_axis(~.*scale2, name="Number of species",breaks=c(0,10,20,30,40)))+
   labs(x="Deployment duration (days)",y="OTU richness")+
   theme_bw()+
   ggtitle("        18S\nB")+
-  theme(legend.title = element_blank(),plot.title = element_text(size = 20,face = "bold",vjust=-.2),axis.text.y=element_text(color="black"),axis.text.x=element_text(color="black",angle=45,hjust=1),axis.text=element_text(size=10),axis.title=element_text(size=12),legend.text=element_text(size=12),panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
+  theme(plot.title = element_text(size = 20,face = "bold",vjust=-.2),axis.text.y=element_text(color="black"),axis.text.x=element_text(color="black",angle=45,hjust=1),axis.text=element_text(size=10),axis.title=element_text(size=12),legend.text=element_text(size=12),panel.grid.major = element_blank(), panel.grid.minor = element_blank(),
         axis.line = element_line(colour = "black"),panel.border = element_blank())
 
 # Combine and save plots 
 
 read_duration_plot<-ggpubr::ggarrange(duration_plot_COI,duration_plot_18S,read_plot_COI,read_plot_18S,ncol=2,nrow=2,common.legend = T,legend="bottom",align="hv")
 
-ggsave(read_duration_plot,file="Figures/Figure_5.png",width=6,height=7,bg="white",dpi=600)
+ggsave(read_duration_plot,file="Figure_5.png",width=6,height=7,bg="white",dpi=600)
 ## Outside of R, using any image processing software, move x-axis title of A and B closer to x-axes, y-axis titles of B and D closer to y-axis and plot titles of C and D closer to plots. Then save as pdf.
-
-# Do statistics: correlation analysis and linear regression #
-
-# COI
-
-# Spearman Correlations
-cor.test(read_sums_COI$richness,read_sums_COI$reads,method = "spearman",exact=FALSE)
-cor.test(read_sums_COI$species,read_sums_COI$reads,method = "spearman",exact=FALSE)
-cor.test(read_sums_COI$richness,read_sums_COI$Deployment_Days,method = "spearman",exact=FALSE)
-cor.test(read_sums_COI$species,read_sums_COI$Deployment_Days,method = "spearman",exact=FALSE)
-
-# Regression
-reads_richness_COI<-lm(richness~reads,read_sums_COI)
-summary(reads_richness_COI)
-reads_species_COI<-lm(species~reads,read_sums_COI)
-summary(reads_species_COI)
-
-# 18S
-
-# Spearman correlations
-cor.test(read_sums_18S$richness,read_sums_18S$read,method = "spearman",exact=FALSE)
-cor.test(read_sums_18S$species,read_sums_18S$reads,method = "spearman",exact=FALSE)
-cor.test(read_sums_18S$richness,read_sums_18S$Deployment_Days,method = "spearman",exact=FALSE)
-cor.test(read_sums_18S$species,read_sums_18S$Deployment_Days,method = "spearman",exact=FALSE)
-
-# Regression
-reads_richness_18S<-lm(richness~reads,read_sums_18S)
-summary(reads_richness_18S)
-reads_species_18S<-lm(species~reads,read_sums_18S)
-summary(reads_species_18S)
 
 ### Number of ARMS and samples vs. ASV/OTU richness and number of identified species for COI and 18S per observatory ###
 
@@ -1522,7 +1574,7 @@ ggsave(effort_plot,file="effort_plot.png",width=8,height=8,bg="white")
 
 # COI
 
-# Pearson Correlations
+# Spearman Correlations
 
 cor.test(sums_merge_COI_wide$species,sums_merge_COI_wide$arms,method = "spearman",exact=FALSE)
 cor.test(sums_merge_COI_wide$richness,sums_merge_COI_wide$arms,method = "spearman",exact=FALSE)
@@ -1537,7 +1589,7 @@ summary(effort2_species_COI)
 
 # 18S
 
-# Pearson correlations
+# Spearman correlations
 cor.test(sums_merge_18S_wide$species,sums_merge_18S_wide$arms,method = "spearman",exact=FALSE)
 cor.test(sums_merge_18S_wide$richness,sums_merge_18S_wide$arms,method = "spearman",exact=FALSE)
 cor.test(sums_merge_18S_wide$species,sums_merge_18S_wide$samples,method = "spearman",exact=FALSE)
@@ -1653,7 +1705,7 @@ ggsave(freq_plot,file="Figures/Figure_4.png",width=5,height=4,bg="transparent",d
 psCOI_reads <- prune_samples(sample_sums(psCOI) > 5000, psCOI)
 ps18S_reads <- prune_samples(sample_sums(ps18S) > 5000, ps18S)
 
-# rarefy samples to 5,000 reads ( a large number of ASVs/OTUs will be removed, as the previous step left many sequences with zero reads in the data sets)
+# rarefy samples to 5,000 reads (a large number of ASVs/OTUs will be removed, as the previous step left many sequences with zero reads in the data sets)
 
 psCOI_rarefied <- rarefy_even_depth(psCOI_reads, rngseed=1, sample.size=5000, replace=F)
 ps18S_rarefied <- rarefy_even_depth(ps18S_reads, rngseed=1, sample.size=5000, replace=F)
@@ -1699,6 +1751,14 @@ COI_rich$Anthropogenic_influence<-ifelse(COI_rich$Anthropogenic_influence=="indu
 
 rich_18S$Anthropogenic_influence<-ifelse(rich_18S$Anthropogenic_influence=="industrial" | rich_18S$Anthropogenic_influence=="semi-industrial","industrial/semi-industrial",rich_18S$Anthropogenic_influence)
 
+# Add Observatory info for random effect later
+
+COI_rich<-separate_wider_delim(COI_rich,Sample,delim = "_",names=c("a","Observatory","b","c","d","e","f","g","h"),too_few = "align_start")
+COI_rich<-COI_rich[,c(2,10:12)]
+
+rich_18S<-separate_wider_delim(rich_18S,Sample,delim = "_",names=c("a","Observatory","b","c","d","e","f","g","h"),too_few = "align_start")
+rich_18S<-rich_18S[,c(2,10:12)]
+
 # Mean & SD
 
 as.data.frame(COI_rich %>% # as.data.frame necessary, cause RStudio does not display decimal digits properly for tibbles
@@ -1732,6 +1792,46 @@ as.data.frame(rich_18S %>%
 as.data.frame(rich_18S %>% 
                 group_by(Anthropogenic_influence) %>%
                 summarise_at(vars(spec_rich), list(name = sd)))
+
+# Test linear mixed effect modelling with Anthropogenic_influence as fixed effect and Observatory as random effect
+
+# COI data
+
+# random intercept
+mod1a <- lmer(seq_rich ~ Anthropogenic_influence + (1 | Observatory), data = COI_rich)
+summary(mod1a) # no significance for fixed effect
+ranova(mod1a) # random effect not significant
+mod2a <- lmer(spec_rich ~ Anthropogenic_influence + (1 | Observatory), data = COI_rich)
+summary(mod2a)  # no significance for fixed effect
+ranova(mod2a) # random effect not significant
+
+# random intercept and random slope
+mod1b <- lmer(seq_rich ~ Anthropogenic_influence + (Anthropogenic_influence | Observatory), data = COI_rich) # throws "boundary (singular) fit" warning
+summary(mod1b) # no significance for fixed effect
+ranova(mod1b) # random effect not significant
+mod2b <- lmer(spec_rich ~ Anthropogenic_influence + (Anthropogenic_influence | Observatory), data = COI_rich) # throws "boundary (singular) fit" warning
+summary(mod2b)  # no significance for fixed effect
+ranova(mod2b) # random effect not significant
+
+# 18S data
+
+# random intercept
+mod3a <- lmer(seq_rich ~ Anthropogenic_influence + (1 | Observatory), data = rich_18S)
+summary(mod3a) # no significance for fixed effect
+ranova(mod3a) # random effect not significant
+mod4a <- lmer(spec_rich ~ Anthropogenic_influence + (1 | Observatory), data = rich_18S)
+summary(mod4a)  # no significance for fixed effect
+ranova(mod4a) # random effect not significant
+
+# random intercept and random slope
+mod3b <- lmer(seq_rich ~ Anthropogenic_influence + (Anthropogenic_influence | Observatory), data = rich_18S) # throws "boundary (singular) fit" warning
+summary(mod3b) # no significance for fixed effect
+ranova(mod3b) # random effect not significant
+mod4b <- lmer(spec_rich ~ Anthropogenic_influence + (Anthropogenic_influence | Observatory), data = rich_18S) # # throws "boundary (singular) fit" warning and that model fails to converge
+summary(mod4b)  # no significance for fixed effect
+ranova(mod4b) # random effect not significant
+
+## Do alternative tests
 
 # Check for normality and statistically compare ASV/OTU and species richness between Anthropogenic_influences
 
