@@ -28,6 +28,8 @@ The R script [gene_analysis.R](https://github.com/arms-mbon/code_release_001/blo
 * statistics
 * generating plots
 
+The [gene_analysis_revised.R](https://github.com/arms-mbon/code_release_001/blob/main/gene_analysis_revised.R) file is the current version including changes requested by the reviewers of the submitted manuscript.
+
 Further information on each step are given as comments within the R script.
 
 ## Screening for species listed in AMBI, IUCN/HELCOM Red Lists and WRiMS
