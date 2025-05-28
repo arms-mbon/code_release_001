@@ -2,6 +2,9 @@
 
 Here you will find all code that was used for the analysis presented in ARMS-MBON's first data paper. Note that this is not the code used to create files for (Eur)OBIS data submissions, but the code used for the exploration of the sequencing data (see [data_release_001](https://github.com/arms-mbon/data_release_001) for the related occurrence and event data and [analysis_release_001](https://github.com/arms-mbon/analysis_release_001) for the bioinformatics data).
 
+## DwC-A generator code
+The code used to turn the PEMA outputs can be found in https://github.com/arms-mbon/darwin-core-generator/tree/main/arms_toolbox_datarelease001. It is important to note that the FixPEMAtaxassignments codes (the next block) are run before the DwC-A generator is. 
+
 ## Curating taxonomy and adding NCBI IDs ##
 *  [FixPEMAtaxassigments_18S_taxonomist.py](https://github.com/arms-mbon/code_release_001/blob/main/FixPEMAtaxassigments_18S_taxonomist.py) to curate the 18S taxonomic outputs (see [the repo processing_batch1/updated_taxonomic_assignments](https://github.com/arms-mbon/data_workspace/tree/main/analysis_data/from_pema/processing_batch1/updated_taxonomic_assignments) for more detail) and get the NBCI IDs for the scientific names. 
 *  [FixPEMAtaxassigments_COI_taxonomist.py](https://github.com/arms-mbon/code_release_001/blob/main/FixPEMAtaxassigments_COI_taxonomist.py) to add the species level from the output PEMA taxonomic assignment files to the OTU tables, for COI, and finding the NCBI ID for those (see [the repo processing_batch1/updated_taxonomic_assignments](https://github.com/arms-mbon/data_workspace/tree/main/analysis_data/from_pema/processing_batch1/updated_taxonomic_assignments) for more detail).
