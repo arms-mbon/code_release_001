@@ -64,6 +64,12 @@
       "@type": "Organization",
       "url": "https://marcobolo-project.eu/",
       "name": "MARCO BOLO"
+    },
+    {
+      "@id": "https://ror.org/0038zss60",
+      "@type": "Organization",
+      "url": "https://embrc.eu/",
+      "name": "EMBRC"
     }
   ],
   "maintainer": [
